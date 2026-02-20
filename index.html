@@ -31,12 +31,13 @@
             background: rgba(5, 10, 24, 0.85) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-            padding: 0.8rem 0; /* Adjusted padding to accommodate larger logo */
+            /* UPDATED: Increased padding for larger logo space */
+            padding: 1.2rem 0;
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
-        /* Updated Navbar Brand to align Logo and Text */
+        /* Navbar Brand alignment */
         .navbar-brand {
             font-weight: 900;
             letter-spacing: 1.5px;
@@ -45,29 +46,33 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 15px; /* Added slightly more space between logo and text */
+            /* UPDATED: Increased gap between large logo and text */
+            gap: 20px;
         }
 
         /* Circular Logo Styling */
         .nav-logo {
-            height: 70px; /* Increased from 45px */
-            width: 70px;  /* Increased from 45px */
+            /* UPDATED: Doubled size to 125px for readability */
+            height: 125px;
+            width: 125px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--goan-gold);
+            border: 3px solid var(--goan-gold); /* Slightly thicker border */
             background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Added a subtle shadow for depth */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
         }
 
         .footer-logo {
-            height: 120px; /* Increased from 90px to match new scale */
-            width: 120px;  /* Increased from 90px */
+            /* UPDATED: Increased footer logo to maintain hierarchy */
+            height: 160px;
+            width: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--goan-gold);
+            border: 4px solid var(--goan-gold);
             margin-bottom: 25px;
             background-color: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .nav-link {
@@ -280,7 +285,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./images/2641a659-2bb7-4547-980d-4d41452cde77.jpg" alt="RGB Logo" class="nav-logo">
+                <img src="./images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
                 <div>READING<span class="text-white">GOANBOYS</span></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -529,7 +534,7 @@
     <footer>
         <div class="container text-center">
             
-            <img src="./images/2641a659-2bb7-4547-980d-4d41452cde77.jpg" alt="RGB Logo" class="footer-logo">
+            <img src="./images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
             
             <h2 class="fw-bold mb-2">READING<span style="color:var(--goan-gold)">GOANBOYS</span></h2>
             <p class="opacity-50 mb-5 fw-light">Bringing the Soul of Goa to the Heart of Berkshire.</p>
@@ -560,16 +565,16 @@
         });
 
         // Add slightly dark background to navbar on scroll for better readability
+        // UPDATED: Adjusted scroll padding to accommodate larger logo
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 document.querySelector('.navbar').style.background = 'rgba(2, 4, 10, 0.98)';
-                document.querySelector('.navbar').style.padding = '0.6rem 0';
+                document.querySelector('.navbar').style.padding = '0.8rem 0';
             } else {
                 document.querySelector('.navbar').style.background = 'rgba(5, 10, 24, 0.85)';
-                document.querySelector('.navbar').style.padding = '0.8rem 0';
+                document.querySelector('.navbar').style.padding = '1.2rem 0';
             }
         });
     </script>
 </body>
 </html>
-
