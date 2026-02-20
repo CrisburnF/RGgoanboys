@@ -31,17 +31,41 @@
             background: rgba(5, 10, 24, 0.85) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
+        /* Updated Navbar Brand to align Logo and Text */
         .navbar-brand {
             font-weight: 900;
             letter-spacing: 1.5px;
             color: var(--goan-gold) !important;
             font-size: 1.5rem;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Circular Logo Styling */
+        .nav-logo {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--goan-gold);
+            background-color: #fff; /* Helps transparent logos pop */
+        }
+
+        .footer-logo {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--goan-gold);
+            margin-bottom: 20px;
+            background-color: #fff;
         }
 
         .nav-link {
@@ -116,7 +140,7 @@
             object-fit: cover;
             width: 100%;
             transition: transform 0.6s ease;
-            object-position: top; /* Helps keep focus on the top part of the image if it crops */
+            object-position: top; 
         }
 
         .custom-card:hover .card-img {
@@ -253,7 +277,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">READING<span class="text-white">GOANBOYS</span></a>
+            <a class="navbar-brand" href="#">
+                <img src="images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
+                <div>READING<span class="text-white">GOANBOYS</span></div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -324,7 +351,7 @@
                     <div class="custom-card">
                         <div class="card-img-wrapper">
                             
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/easter-party-chillout-design-template-fb73279e9d970cf10d2b7e12c8d001ef_screen.jpg?ts=1711726209" class="card-img" alt="Easter Bunny DJing">
+                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/easter-party-chillout-design-template-fb73279e9d970cf10d2b7e12c8d001ef_screen.jpg?ts=1711726209" class="card-img" alt="Easter DJ">
                             
                             <div class="position-absolute top-0 start-0 m-4">
                                 <span class="badge bg-danger py-2 px-3 fw-bold" style="letter-spacing: 1px;">NEXT EVENT</span>
@@ -351,7 +378,7 @@
                     <div class="custom-card">
                         <div class="card-img-wrapper">
 
-                            <img src="https://cdn-marketing.oneplan.io/www.oneplan.io/2022/03/iStock-494896581-1-1.jpg" class="card-img" alt="Summer Fiesta Outdoor Concert">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" class="card-img" alt="Summer Fiesta Outdoor Concert">
                             
                             <div class="position-absolute top-0 start-0 m-4">
                                 <span class="badge bg-primary py-2 px-3 fw-bold" style="letter-spacing: 1px;">SUMMER BLOCKBUSTER</span>
@@ -499,6 +526,9 @@
 
     <footer>
         <div class="container text-center">
+            
+            <img src="images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
+            
             <h2 class="fw-bold mb-2">READING<span style="color:var(--goan-gold)">GOANBOYS</span></h2>
             <p class="opacity-50 mb-5 fw-light">Bringing the Soul of Goa to the Heart of Berkshire.</p>
             
@@ -534,7 +564,7 @@
                 document.querySelector('.navbar').style.padding = '0.8rem 0';
             } else {
                 document.querySelector('.navbar').style.background = 'rgba(5, 10, 24, 0.85)';
-                document.querySelector('.navbar').style.padding = '1.2rem 0';
+                document.querySelector('.navbar').style.padding = '1rem 0';
             }
         });
     </script>
