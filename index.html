@@ -18,6 +18,11 @@
             --accent-blue: #0dcaf0;
         }
 
+        /* UPDATED: Added scroll-padding-top to prevent navbar overlap */
+        html {
+            scroll-padding-top: 180px; 
+        }
+
         body {
             background-color: var(--deep-navy);
             color: #ffffff;
@@ -31,7 +36,6 @@
             background: rgba(5, 10, 24, 0.85) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-            /* UPDATED: Increased padding for larger logo space */
             padding: 1.2rem 0;
             z-index: 1000;
             transition: all 0.3s ease;
@@ -46,25 +50,22 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            /* UPDATED: Increased gap between large logo and text */
             gap: 20px;
         }
 
         /* Circular Logo Styling */
         .nav-logo {
-            /* UPDATED: Doubled size to 125px for readability */
             height: 125px;
             width: 125px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--goan-gold); /* Slightly thicker border */
+            border: 3px solid var(--goan-gold);
             background-color: #fff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
         }
 
         .footer-logo {
-            /* UPDATED: Increased footer logo to maintain hierarchy */
             height: 160px;
             width: 160px;
             border-radius: 50%;
@@ -565,11 +566,10 @@
         });
 
         // Add slightly dark background to navbar on scroll for better readability
-        // UPDATED: Adjusted scroll padding to accommodate larger logo
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 document.querySelector('.navbar').style.background = 'rgba(2, 4, 10, 0.98)';
-                document.querySelector('.navbar').style.padding = '0.8rem 0';
+                document.querySelector('.navbar').style.padding = '0.6rem 0';
             } else {
                 document.querySelector('.navbar').style.background = 'rgba(5, 10, 24, 0.85)';
                 document.querySelector('.navbar').style.padding = '1.2rem 0';
