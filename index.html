@@ -31,7 +31,7 @@
             background: rgba(5, 10, 24, 0.85) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-            padding: 1rem 0;
+            padding: 0.8rem 0; /* Adjusted padding to accommodate larger logo */
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -45,27 +45,29 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px; /* Added slightly more space between logo and text */
         }
 
         /* Circular Logo Styling */
         .nav-logo {
-            height: 45px;
-            width: 45px;
+            height: 70px; /* Increased from 45px */
+            width: 70px;  /* Increased from 45px */
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--goan-gold);
-            background-color: #fff; /* Helps transparent logos pop */
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Added a subtle shadow for depth */
         }
 
         .footer-logo {
-            height: 90px;
-            width: 90px;
+            height: 120px; /* Increased from 90px to match new scale */
+            width: 120px;  /* Increased from 90px */
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--goan-gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
         .nav-link {
@@ -278,7 +280,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
+                <img src="./images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
                 <div>READING<span class="text-white">GOANBOYS</span></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -527,7 +529,7 @@
     <footer>
         <div class="container text-center">
             
-            <img src="images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
+            <img src="./images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
             
             <h2 class="fw-bold mb-2">READING<span style="color:var(--goan-gold)">GOANBOYS</span></h2>
             <p class="opacity-50 mb-5 fw-light">Bringing the Soul of Goa to the Heart of Berkshire.</p>
@@ -561,10 +563,10 @@
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 document.querySelector('.navbar').style.background = 'rgba(2, 4, 10, 0.98)';
-                document.querySelector('.navbar').style.padding = '0.8rem 0';
+                document.querySelector('.navbar').style.padding = '0.6rem 0';
             } else {
                 document.querySelector('.navbar').style.background = 'rgba(5, 10, 24, 0.85)';
-                document.querySelector('.navbar').style.padding = '1rem 0';
+                document.querySelector('.navbar').style.padding = '0.8rem 0';
             }
         });
     </script>
