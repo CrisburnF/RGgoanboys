@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showbiz Global | Elevating Culture & Entertainment</title>
+    <title>Reading Goan Boys | Premier Events & Culture</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -11,39 +11,40 @@
 
     <style>
         :root {
-            --primary-gold: #D4AF37;
-            --dark-surface: #0a0a0a;
-            --card-bg: #161616;
-            --accent-pink: #ff0055;
+            --goan-gold: #FFD700;
+            --deep-navy: #050A18;
+            --surface-dark: #0f121a;
+            --accent-blue: #007bff;
         }
 
         body {
-            background-color: var(--dark-surface);
+            background-color: var(--deep-navy);
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
         }
 
         /* Glassmorphism Navbar */
         .navbar {
-            background: rgba(0, 0, 0, 0.8) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(5, 10, 24, 0.9) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
             padding: 1rem 0;
         }
 
         .navbar-brand {
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--primary-gold) !important;
-            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--goan-gold) !important;
+            font-size: 1.4rem;
+            text-transform: uppercase;
         }
 
-        /* Hero Video/Image Section */
+        /* Hero Section with Parallax Effect */
         .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80');
+            height: 90vh;
+            background: linear-gradient(rgba(5, 10, 24, 0.7), rgba(5, 10, 24, 0.95)), 
+                        url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -53,61 +54,73 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
             font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1;
+            line-height: 1.1;
             margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
-        /* Event Cards - Showbiz Style */
+        .hero-subtitle {
+            color: var(--goan-gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Event Cards - Modern Glass Look */
         .event-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.4s ease;
-            margin-bottom: 30px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .event-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            transform: scale(1.03);
+            border-color: var(--goan-gold);
+            background: rgba(255, 255, 255, 0.07);
         }
 
         .event-img {
-            height: 250px;
+            height: 280px;
             object-fit: cover;
             width: 100%;
+            filter: grayscale(20%);
+            transition: 0.5s;
+        }
+
+        .event-card:hover .event-img {
+            filter: grayscale(0%);
         }
 
         .btn-gold {
-            background-color: var(--primary-gold);
-            color: black;
-            font-weight: bold;
-            border-radius: 0;
-            padding: 12px 30px;
-            text-transform: uppercase;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            font-weight: 800;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            transition: 0.3s;
         }
 
         .btn-gold:hover {
-            background-color: #fff;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
             color: #000;
         }
 
-        .section-title {
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 50px;
-            border-left: 5px solid var(--primary-gold);
-            padding-left: 20px;
+        /* Stats Section */
+        .stat-box {
+            padding: 40px;
+            border-right: 1px solid rgba(255,255,255,0.1);
         }
 
         footer {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            background: #03060e;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(255,215,0,0.1);
         }
     </style>
 </head>
@@ -115,62 +128,98 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">SHOWBIZ<span class="text-white">GLOBAL</span></a>
+            <a class="navbar-brand" href="#">READING<span class="text-white">GOANBOYS</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#events">Upcoming Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Our Story</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-gold ms-lg-3" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Live Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">The Community</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-gold ms-lg-4 text-dark" href="#contact">Join the Party</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <section class="hero-section">
-        <div class="container" data-aos="zoom-out" data-aos-duration="1500">
-            <h1 class="hero-title">Beyond<br><span style="color:var(--primary-gold)">Extraordinary</span></h1>
-            <p class="lead mb-4 fw-light text-uppercase tracking-widest">Elevating South Asian Culture Nationwide</p>
-            <a href="#events" class="btn btn-gold btn-lg">View Calendar</a>
+        <div class="container" data-aos="fade-up">
+            <h6 class="hero-subtitle mb-3">Authentic. Vibrant. Unforgettable.</h6>
+            <h1 class="hero-title">The Heart of <br><span style="color:var(--goan-gold)">Goan Entertainment</span></h1>
+            <p class="lead mb-5 opacity-75">UK's premier events company bringing the soul of Goa to Reading.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#events" class="btn btn-gold">Browse Events</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-black">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 stat-box" data-aos="fade-up">
+                    <h2 class="fw-bold" style="color:var(--goan-gold)">50+</h2>
+                    <p class="text-uppercase small mb-0">Events Hosted</p>
+                </div>
+                <div class="col-md-4 stat-box" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="fw-bold" style="color:var(--goan-gold)">10k+</h2>
+                    <p class="text-uppercase small mb-0">Happy Guests</p>
+                </div>
+                <div class="col-md-4 stat-box border-0" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="fw-bold" style="color:var(--goan-gold)">100%</h2>
+                    <p class="text-uppercase small mb-0">Vibe Check</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="events" class="py-5 mt-5">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">Upcoming Experiences</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-right">
+                <div>
+                    <h6 class="text-primary text-uppercase fw-bold">Don't Miss Out</h6>
+                    <h2 class="display-5 fw-bold">Upcoming Experiences</h2>
+                </div>
+                <a href="#" class="text-white text-decoration-none border-bottom pb-1">View All Calendar <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="zoom-in-up">
                     <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1514525253361-bee8a48740ad?auto=format&fit=crop&w=800&q=80" class="event-img" alt="Event">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" class="event-img" alt="Carnival">
                         <div class="p-4">
-                            <span class="text-muted small text-uppercase">15 August 2025 • London</span>
-                            <h4 class="mt-2 fw-bold">Bollywood Boat Party</h4>
-                            <p class="text-secondary">Cruise the Thames with ultimate Desi glam and non-stop Bhangra vibes.</p>
-                            <a href="#" class="btn btn-outline-light btn-sm mt-2">Get Tickets</a>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <span class="badge bg-primary mb-2">MOST POPULAR</span>
+                                    <h3 class="fw-bold">Reading Goan Carnival 2026</h3>
+                                </div>
+                                <div class="text-end">
+                                    <h4 class="fw-bold mb-0">24</h4>
+                                    <span class="small text-uppercase">May</span>
+                                </div>
+                            </div>
+                            <p class="opacity-50">Join us for a day of authentic Goan food, live music, and the famous Reading Goan Boys hospitality.</p>
+                            <button class="btn btn-outline-warning w-100 mt-3">Secure Your Spot</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="col-lg-6" data-aos="zoom-in-up" data-aos-delay="200">
                     <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" class="event-img" alt="Event">
+                        <img src="https://images.unsplash.com/photo-1496337589254-7e19d01ced44?auto=format&fit=crop&w=1200&q=80" class="event-img" alt="Boat Party">
                         <div class="p-4">
-                            <span class="text-muted small text-uppercase">September 2025 • Manchester</span>
-                            <h4 class="mt-2 fw-bold">Goa Day Festival</h4>
-                            <h5 class="text-secondary">A landmark celebration of heritage, music, and authentic Goan cuisine.</h5>
-                            <a href="#" class="btn btn-outline-light btn-sm mt-2">Explore Event</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" class="event-img" alt="Event">
-                        <div class="p-4">
-                            <span class="text-muted small text-uppercase">December 2025 • Birmingham</span>
-                            <h4 class="mt-2 fw-bold">Winter Bollywood Gala</h4>
-                            <p class="text-secondary">The most exclusive black-tie event of the season. Luxury redefined.</p>
-                            <a href="#" class="btn btn-outline-light btn-sm mt-2">Notify Me</a>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <span class="badge bg-info mb-2">EXCLUSIVE</span>
+                                    <h3 class="fw-bold">Bhangra & Beer Cruise</h3>
+                                </div>
+                                <div class="text-end">
+                                    <h4 class="fw-bold mb-0">12</h4>
+                                    <span class="small text-uppercase">July</span>
+                                </div>
+                            </div>
+                            <p class="opacity-50">Summer vibes on the water. A private charter featuring the UK's top Goan DJs and unlimited fun.</p>
+                            <button class="btn btn-outline-warning w-100 mt-3">Join the Guestlist</button>
                         </div>
                     </div>
                 </div>
@@ -180,13 +229,14 @@
 
     <footer class="text-center">
         <div class="container">
-            <h3 class="fw-bold mb-4">SHOWBIZ<span style="color:var(--primary-gold)">GLOBAL</span></h3>
-            <div class="mb-4">
-                <a href="#" class="text-white mx-3"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#" class="text-white mx-3"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#" class="text-white mx-3"><i class="fab fa-tiktok fa-2x"></i></a>
+            <h2 class="fw-bold mb-4">READING<span style="color:var(--goan-gold)">GOANBOYS</span></h2>
+            <p class="opacity-50 mb-4">Reading's No.1 Goan Events Community</p>
+            <div class="mb-5">
+                <a href="#" class="text-white mx-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white mx-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-white mx-3"><i class="fab fa-snapchat-ghost fa-lg"></i></a>
             </div>
-            <p class="text-muted small">&copy; 2026 Showbiz Global Ltd. All rights reserved.</p>
+            <p class="text-muted x-small">&copy; 2026 Reading Goan Boys. Site hosted on GitHub.</p>
         </div>
     </footer>
 
@@ -194,7 +244,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true
         });
     </script>
