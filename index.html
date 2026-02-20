@@ -8,13 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --goan-gold: #FFD700;
             --deep-navy: #050A18;
-            --surface-dark: #0f121a;
+            --card-bg: #11141d;
             --accent-blue: #0dcaf0;
         }
 
@@ -25,188 +25,129 @@
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Navbar */
+        /* Navbar */
         .navbar {
-            background: rgba(5, 10, 24, 0.85) !important;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-            padding: 1.2rem 0;
+            background: rgba(5, 10, 24, 0.95) !important;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 1rem 0;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .navbar-brand {
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: var(--goan-gold) !important;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
         }
 
-        .nav-link {
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
+        /* Hero Section (Clean & Solid) */
         .hero-section {
-            height: 95vh;
-            background: linear-gradient(rgba(5, 10, 24, 0.7), rgba(5, 10, 24, 0.95)), 
-                        url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            height: 60vh;
+            background-color: var(--deep-navy);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            flex-direction: column;
+            padding-top: 80px;
         }
 
         .hero-title {
-            font-size: clamp(2.8rem, 8vw, 6.5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 25px;
+            line-height: 1;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
-            color: var(--goan-gold);
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
+            color: #ffffff;
+            opacity: 0.8;
+            font-weight: 400;
         }
 
         /* Event Cards */
         .event-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         .event-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.1);
-        }
-
-        .event-img-wrapper {
-            overflow: hidden;
-            position: relative;
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateY(-5px);
         }
 
         .event-img {
-            height: 350px;
+            height: 300px;
             object-fit: cover;
             width: 100%;
-            transition: transform 0.6s ease;
-        }
-
-        .event-card:hover .event-img {
-            transform: scale(1.05);
-        }
-
-        /* Custom Date Badge */
-        .date-badge {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--goan-gold);
-            padding: 12px 18px;
-            border-radius: 14px;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .date-badge.festival {
-            border-color: var(--accent-blue);
-        }
-
-        /* Custom Buttons */
-        .btn-gold {
-            background: linear-gradient(45deg, #FFD700, #FDB931);
-            color: #000 !important;
-            font-weight: 800;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 50px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .btn-gold:hover {
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-custom-outline {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            background: transparent;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .btn-custom-outline:hover {
-            border-color: var(--goan-gold);
-            background: var(--goan-gold);
-            color: #000;
         }
 
         .section-title {
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             border-left: 5px solid var(--goan-gold);
             padding-left: 20px;
         }
 
+        /* Date Box Styles */
+        .date-box {
+            border: 1px solid var(--goan-gold);
+            border-radius: 8px;
+            padding: 10px 15px;
+            text-align: center;
+            min-width: 75px;
+        }
+
+        .date-box.blue-box {
+            border-color: var(--accent-blue);
+        }
+
+        /* Buttons */
+        .btn-outline-gold {
+            border: 1px solid var(--goan-gold);
+            color: var(--goan-gold);
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+        .btn-outline-gold:hover { background: var(--goan-gold); color: #000; }
+
+        .btn-outline-cyan {
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+        .btn-outline-cyan:hover { background: var(--accent-blue); color: #000; }
+        
+        /* Charity Section */
+        .charity-bg {
+            background: #080d1a;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
         /* Footer */
         footer {
-            background: #020305;
+            background: var(--deep-navy);
             padding: 80px 0 40px;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
         }
 
         .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+            font-size: 1.5rem;
             color: white;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
         }
 
-        .social-icon:hover {
-            background: var(--goan-gold);
-            color: #000;
-            transform: translateY(-3px);
-        }
+        .social-icon:hover { color: var(--goan-gold); }
     </style>
 </head>
 <body>
@@ -219,81 +160,98 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-gold ms-lg-4" href="#contact">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white" href="#charity">Charity</a></li>
+                    <li class="nav-item"><a class="nav-link btn text-dark ms-lg-4 px-4 py-2" style="background-color: var(--goan-gold); font-weight: bold;" href="#contact">Join Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <header class="hero-section">
-        <div class="container" data-aos="zoom-out" data-aos-duration="1500">
-            <span class="hero-subtitle">Culture • Music • Community</span>
-            <h1 class="hero-title">Elevating the <br><span style="color:var(--goan-gold)">Goan Experience</span></h1>
-            <p class="lead mb-5 opacity-75 mx-auto fw-light" style="max-width: 700px;">Join the Reading Goan Boys for the most anticipated cultural gatherings in the UK. Unforgettable nights, authentic vibes.</p>
-            <div class="d-flex justify-content-center">
-                <a href="#events" class="btn btn-gold">View Calendar</a>
-            </div>
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="hero-title">THE <span style="color:var(--goan-gold)">SOUL</span> OF GOA</h1>
+            <p class="hero-subtitle">Reading's Premier Cultural & Event Experiences</p>
         </div>
     </header>
 
-    <section id="events" class="py-5 my-5">
+    <section id="events" class="py-5">
         <div class="container">
             <div class="mb-5" data-aos="fade-right">
-                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Live and Upcoming</h6>
+                <h6 class="text-warning text-uppercase fw-bold mb-2">Live and Upcoming</h6>
                 <h2 class="display-5 section-title">The 2026 Season</h2>
             </div>
             
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="event-card">
-                        <div class="event-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" class="event-img" alt="Easter Party">
-                            <div class="position-absolute top-0 start-0 m-4">
-                                <span class="badge bg-danger py-2 px-3 fw-bold" style="letter-spacing: 1px;">NEXT EVENT</span>
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1571266028243-cb40fce7573a?auto=format&fit=crop&w=1200&q=80" class="event-img" alt="Easter Party">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-danger p-2 px-3 fw-bold">NEXT EVENT</span>
                             </div>
                         </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="p-4">
                             <div class="d-flex justify-content-between align-items-start mb-4">
                                 <div>
                                     <h3 class="fw-bold mb-1">Easter Celebration</h3>
-                                    <p class="text-warning mb-0 fw-semibold"><i class="far fa-clock me-2"></i>Doors Open 5:00 PM</p>
+                                    <p class="text-warning mb-0 small"><i class="far fa-clock me-2"></i>Doors Open 5:00 PM</p>
                                 </div>
-                                <div class="date-badge">
+                                <div class="date-box bg-dark">
                                     <h4 class="fw-bold mb-0 text-white">05</h4>
-                                    <span class="small text-uppercase text-warning fw-bold">April</span>
+                                    <span class="small text-uppercase text-warning fw-bold" style="font-size: 0.75rem;">April</span>
                                 </div>
                             </div>
-                            <p class="opacity-75 fw-light mb-4 flex-grow-1">Kickstart the spring season with our legendary Easter Party. Expect traditional flavors, a high-energy dance floor, and the best community vibes in Reading.</p>
-                            <a href="#" class="btn-custom-outline">Register Interest</a>
+                            <p class="opacity-75 mb-4">Kickstart the spring season with our legendary Easter Party. Expect traditional flavors, a high-energy dance floor, and the best community vibes in Reading.</p>
+                            <a href="#" class="btn btn-outline-gold w-100 py-2 fw-bold text-uppercase">Register Interest</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="event-card">
-                        <div class="event-img-wrapper">
+                        <div class="position-relative">
                             <img src="https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&w=1200&q=80" class="event-img" alt="Goan Festival">
-                            <div class="position-absolute top-0 start-0 m-4">
-                                <span class="badge bg-primary py-2 px-3 fw-bold" style="letter-spacing: 1px;">SUMMER BLOCKBUSTER</span>
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-primary p-2 px-3 fw-bold">SUMMER BLOCKBUSTER</span>
                             </div>
                         </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="p-4">
                             <div class="d-flex justify-content-between align-items-start mb-4">
                                 <div>
                                     <h3 class="fw-bold mb-1">Open Air Goan Festival</h3>
-                                    <p class="text-info mb-0 fw-semibold"><i class="fas fa-sun me-2"></i>Full Day Outdoor Event</p>
+                                    <p class="text-info mb-0 small"><i class="fas fa-sun me-2"></i>Full Day Outdoor Event</p>
                                 </div>
-                                <div class="date-badge festival">
+                                <div class="date-box blue-box bg-dark">
                                     <h4 class="fw-bold mb-0 text-white">08</h4>
-                                    <span class="small text-uppercase text-info fw-bold">August</span>
+                                    <span class="small text-uppercase text-info fw-bold" style="font-size: 0.75rem;">August</span>
                                 </div>
                             </div>
-                            <p class="opacity-75 fw-light mb-4 flex-grow-1">Our flagship summer event. Authentic Goan street food, live brass bands, and cultural performances under the open sky. The ultimate family day out.</p>
-                            <a href="#" class="btn-custom-outline">Early Bird Alerts</a>
+                            <p class="opacity-75 mb-4">Our flagship summer event. Authentic Goan street food, live brass bands, and cultural performances under the open sky. The ultimate family day out.</p>
+                            <a href="#" class="btn btn-outline-cyan w-100 py-2 fw-bold text-uppercase">Early Bird Alerts</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="charity" class="py-5 charity-bg mt-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 opacity-75" style="border: 1px solid rgba(255,215,0,0.2);" alt="Charity Work">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <h6 class="text-warning text-uppercase fw-bold mb-2">Community First</h6>
+                    <h2 class="display-6 fw-bold mb-4">Giving Back to Our Roots</h2>
+                    <p class="opacity-75 mb-4">The Reading Goan Boys community is about more than just unforgettable events. We are committed to making a difference. A portion of our event proceeds goes directly toward supporting charitable initiatives back in Goa and right here in Berkshire.</p>
+                    <ul class="list-unstyled opacity-75 mb-4">
+                        <li class="mb-2"><i class="fas fa-heart text-danger me-2"></i> Supporting local Berkshire food banks</li>
+                        <li class="mb-2"><i class="fas fa-heart text-danger me-2"></i> Funding medical camps in rural Goa</li>
+                        <li class="mb-2"><i class="fas fa-heart text-danger me-2"></i> Annual community toy drives</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-light px-4 py-2 mt-2">Get Involved</a>
                 </div>
             </div>
         </div>
@@ -302,7 +260,7 @@
     <footer id="contact">
         <div class="container text-center">
             <h2 class="fw-bold mb-2">READING<span style="color:var(--goan-gold)">GOANBOYS</span></h2>
-            <p class="opacity-50 mb-5 fw-light">Bringing the Soul of Goa to the Heart of Berkshire.</p>
+            <p class="opacity-50 mb-5">Bringing the Soul of Goa to the Heart of Berkshire.</p>
             
             <div class="mb-5">
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -313,13 +271,13 @@
             
             <hr class="border-secondary opacity-25 mb-5">
             
-            <div class="row text-start opacity-50 small fw-light">
-                <div class="col-md-6 mb-3 text-center text-md-start">
-                    <p class="mb-0">&copy; 2026 Reading Goan Boys. All Rights Reserved.</p>
+            <div class="row text-start opacity-75 small">
+                <div class="col-md-6 mb-3">
+                    <p>&copy; 2026 Reading Goan Boys. All Rights Reserved.</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white text-decoration-none me-3 hover-gold">Privacy Policy</a>
-                    <a href="#" class="text-white text-decoration-none hover-gold">Terms of Service</a>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -331,19 +289,7 @@
         AOS.init({
             duration: 800,
             once: true,
-            offset: 100,
-            easing: 'ease-out-cubic'
-        });
-
-        // Add slightly dark background to navbar on scroll for better readability
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.querySelector('.navbar').style.background = 'rgba(2, 4, 10, 0.98)';
-                document.querySelector('.navbar').style.padding = '0.8rem 0';
-            } else {
-                document.querySelector('.navbar').style.background = 'rgba(5, 10, 24, 0.85)';
-                document.querySelector('.navbar').style.padding = '1.2rem 0';
-            }
+            easing: 'ease-in-out'
         });
     </script>
 </body>
