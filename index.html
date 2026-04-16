@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* ── THEME VARIABLES ── */
-        [data-theme="dark"] {
+        :root {
+            --goan-gold: #FFD700;
+            --accent-blue: #0dcaf0;
             --bg-primary: #050A18;
             --bg-card: rgba(255,255,255,0.04);
             --bg-card-border: rgba(255,255,255,0.08);
@@ -32,22 +33,6 @@
             --socials-bg: rgba(255,255,255,0.03);
             --socials-border: rgba(255,255,255,0.05);
         }
-        [data-theme="light"] {
-            --bg-primary: #f4f1eb;
-            --bg-card: rgba(0,0,0,0.03);
-            --bg-card-border: rgba(0,0,0,0.1);
-            --text-primary: #111111;
-            --text-muted: rgba(0,0,0,0.55);
-            --navbar-bg: rgba(244,241,235,0.92);
-            --navbar-scrolled: rgba(244,241,235,0.99);
-            --footer-bg: #111111;
-            --form-bg: rgba(0,0,0,0.04);
-            --form-border: rgba(0,0,0,0.15);
-            --socials-bg: rgba(0,0,0,0.03);
-            --socials-border: rgba(0,0,0,0.08);
-        }
-
-        :root { --goan-gold: #FFD700; --accent-blue: #0dcaf0; }
 
         html { scroll-padding-top: 100px; }
 
@@ -70,22 +55,11 @@
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
         #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-        #loader img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--goan-gold); background: #fff; padding: 4px; animation: loaderPulse 1.5s ease-in-out infinite; }
+        #loader img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--goan-gold); background: #fff; padding: 6px; object-fit: contain; animation: loaderPulse 1.5s ease-in-out infinite; }
         #loader p { color: var(--goan-gold); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; }
         @keyframes loaderPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.5); } 50% { box-shadow: 0 0 0 20px rgba(255,215,0,0); } }
 
-        /* ── THEME TOGGLE BUTTON ── */
-        .theme-toggle {
-            background: var(--bg-card);
-            border: 1px solid var(--bg-card-border);
-            color: var(--text-primary);
-            width: 38px; height: 38px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 0.95rem;
-            transition: all 0.3s ease; flex-shrink: 0;
-        }
-        .theme-toggle:hover { background: var(--goan-gold); color: #000; border-color: var(--goan-gold); }
+
 
         /* ── NAVBAR ── */
         .navbar {
@@ -96,7 +70,7 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-        [data-theme="light"] .navbar { border-bottom: 1px solid rgba(0,0,0,0.1) !important; }
+
         .navbar-brand {
             font-weight: 900; letter-spacing: 1.5px;
             color: var(--goan-gold) !important;
@@ -105,14 +79,16 @@
         }
         .nav-logo {
             height: 60px; width: 60px; border-radius: 50%;
-            object-fit: cover; border: 2px solid var(--goan-gold);
+            object-fit: contain; border: 2px solid var(--goan-gold);
             background-color: #fff; flex-shrink: 0;
+            padding: 2px;
         }
         .footer-logo {
             height: 160px; width: 160px; border-radius: 50%;
-            object-fit: cover; border: 4px solid var(--goan-gold);
+            object-fit: contain; border: 4px solid var(--goan-gold);
             margin-bottom: 25px; background-color: #fff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 4px;
         }
         .nav-link { font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.85rem; color: var(--text-primary) !important; }
         .nav-link:hover { color: var(--goan-gold) !important; }
@@ -212,13 +188,9 @@
                 <img src="./images/rgb-logo.png" alt="GRB Logo" class="nav-logo">
                 <div>GOAN<span style="color:var(--text-primary)">READING BOYS</span></div>
             </a>
-            <!-- Mobile: theme toggle + hamburger together -->
-            <div class="d-flex align-items-center gap-2 ms-auto d-lg-none">
-                <button class="theme-toggle theme-btn" title="Toggle theme"><i class="fas fa-sun"></i></button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            <button class="navbar-toggler border-0 ms-auto d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link px-3 nav-close" href="#about">About</a></li>
@@ -227,9 +199,7 @@
                     <li class="nav-item"><a class="nav-link px-3 nav-close" href="#charity">Charity</a></li>
                     <li class="nav-item"><a class="nav-link px-3 nav-close" href="#socials">Socials</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-gold ms-lg-3 nav-close" href="#contact">Contact Us</a></li>
-                    <li class="nav-item ms-2 d-none d-lg-flex align-items-center">
-                        <button class="theme-toggle theme-btn" title="Toggle theme"><i class="fas fa-sun"></i></button>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -286,7 +256,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 text-center" data-aos="fade-right">
-                    <img src="./images/rgb-logo.png" alt="Goan Reading Boys" class="img-fluid" style="max-width:360px; border-radius:50%; border:4px solid var(--goan-gold); box-shadow:0 0 60px rgba(255,215,0,0.2); background:#fff; padding:8px;">
+                    <img src="./images/rgb-logo.png" alt="Goan Reading Boys" class="img-fluid" style="width:340px; height:340px; border-radius:50%; object-fit:contain; border:4px solid var(--goan-gold); box-shadow:0 0 60px rgba(255,215,0,0.2); background:#fff; padding:12px;">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing:1px;">Who We Are</h6>
@@ -348,7 +318,7 @@
         </div>
     </section>
 
-    <!-- PAST EVENTS — all link to Instagram -->
+    <!-- PAST EVENTS — real posters, link to Instagram -->
     <section id="past-events" class="py-5 my-5">
         <div class="container">
             <div class="mb-4 text-end" data-aos="fade-left">
@@ -356,11 +326,12 @@
                 <h2 class="display-5 section-title border-left-0 border-end" style="border-right:5px solid var(--goan-gold); padding-right:20px;">Past Events</h2>
                 <p style="color:var(--text-muted)" class="small mt-2"><i class="fab fa-instagram me-1"></i> Tap any event to view our Instagram posts</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="row g-4 justify-content-center">
+                <!-- Easter 2026 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
                     <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="custom-card text-decoration-none past-card-link" style="display:flex; flex-direction:column;">
                         <div class="card-img-wrapper" style="position:relative;">
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/easter-party-chillout-design-template-fb73279e9d970cf10d2b7e12c8d001ef_screen.jpg?ts=1711726209" class="card-img past-event-img" alt="Easter Party 2026">
+                            <img src="./images/easter2026.png" class="card-img" style="height:320px; object-fit:cover; object-position:top;" alt="Easter Party 2026">
                             <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
                         </div>
                         <div class="p-3 text-center">
@@ -369,10 +340,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <!-- Summer Fiesta 2025 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
                     <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="custom-card text-decoration-none past-card-link" style="display:flex; flex-direction:column;">
                         <div class="card-img-wrapper" style="position:relative;">
-                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" class="card-img past-event-img" alt="Goan Summer Fiesta 2025">
+                            <img src="./images/summerfiesta2025.png" class="card-img" style="height:320px; object-fit:cover; object-position:top;" alt="Summer Fiesta 2025">
                             <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
                         </div>
                         <div class="p-3 text-center">
@@ -381,27 +353,16 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <!-- Easter 2025 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
                     <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="custom-card text-decoration-none past-card-link" style="display:flex; flex-direction:column;">
                         <div class="card-img-wrapper" style="position:relative;">
-                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" class="card-img past-event-img" alt="Easter Party 2025">
+                            <img src="./images/easter2025.png" class="card-img" style="height:320px; object-fit:cover; object-position:top;" alt="Easter Party 2025">
                             <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
                         </div>
                         <div class="p-3 text-center">
                             <h5 class="fw-bold mb-1">Easter Party</h5>
                             <span style="color:var(--text-muted)" class="small">April 20, 2025</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="custom-card text-decoration-none past-card-link" style="display:flex; flex-direction:column;">
-                        <div class="card-img-wrapper" style="position:relative;">
-                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" class="card-img past-event-img" alt="Feast of Sao Miguel">
-                            <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
-                        </div>
-                        <div class="p-3 text-center">
-                            <h5 class="fw-bold mb-1">Feast of Sao Miguel</h5>
-                            <span style="color:var(--text-muted)" class="small">October 05, 2024</span>
                         </div>
                     </a>
                 </div>
@@ -526,21 +487,7 @@
             });
         });
 
-        // ── DARK / LIGHT THEME ──
-        const html = document.documentElement;
-        function setTheme(theme) {
-            html.setAttribute('data-theme', theme);
-            localStorage.setItem('grb-theme', theme);
-            document.querySelectorAll('.theme-btn i').forEach(i => {
-                i.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            });
-        }
-        setTheme(localStorage.getItem('grb-theme') || 'dark');
-        document.querySelectorAll('.theme-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-            });
-        });
+
 
         // ── COUNTDOWN ──
         function updateCountdown() {
