@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <!-- Google Analytics -->
@@ -20,566 +19,597 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 
-```
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-<style>
-    :root {
-        --goan-gold: #FFD700;
-        --deep-navy: #050A18;
-        --accent-blue: #0dcaf0;
-    }
+    <style>
+        :root {
+            --goan-gold: #FFD700;
+            --deep-navy: #050A18;
+            --accent-blue: #0dcaf0;
+        }
 
-    html { scroll-padding-top: 100px; }
+        html { scroll-padding-top: 100px; }
 
-    body {
-        background-color: var(--deep-navy);
-        color: #ffffff;
-        font-family: 'Outfit', sans-serif;
-        overflow-x: hidden;
-    }
+        body {
+            background-color: var(--deep-navy);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
 
-    .navbar {
-        background: rgba(5, 10, 24, 0.95) !important;
-        backdrop-filter: blur(15px);
-        border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-        padding: 1rem 0;
-    }
+        .navbar {
+            background: rgba(5, 10, 24, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            padding: 1rem 0;
+        }
 
-    .navbar-brand {
-        font-weight: 900;
-        letter-spacing: 1.5px;
-        color: var(--goan-gold) !important;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+        .navbar-brand {
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: var(--goan-gold) !important;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .nav-logo {
-        height: 70px;
-        width: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--goan-gold);
-        background-color: #fff;
-    }
+        .nav-logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--goan-gold);
+            background-color: #fff;
+        }
 
-    /* Hero */
-    .event-hero {
-        min-height: 70vh;
-        background: linear-gradient(to bottom, rgba(5, 10, 24, 0.55) 0%, rgba(5, 10, 24, 0.7) 40%, rgba(5, 10, 24, 0.95) 85%, var(--deep-navy) 100%),
-                    url('../images/festival-bg.png') center/cover;
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 80px;
-        padding-top: 120px;
-        position: relative;
-        overflow: hidden;
-    }
+        /* Hero */
+        .event-hero {
+            min-height: 70vh;
+            background: linear-gradient(to bottom, rgba(5, 10, 24, 0.55) 0%, rgba(5, 10, 24, 0.7) 40%, rgba(5, 10, 24, 0.95) 85%, var(--deep-navy) 100%),
+                        url('../images/festival-bg.png') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 80px;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .event-badge {
-        display: inline-block;
-        background: linear-gradient(45deg, #FFD700, #FDB931);
-        color: #000;
-        font-weight: 900;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 8px 20px;
-        border-radius: 50px;
-        margin-bottom: 20px;
-    }
+        .event-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FDB931);
+            color: #000;
+            font-weight: 900;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
 
-    .event-title {
-        font-size: clamp(2.5rem, 7vw, 5.5rem);
-        font-weight: 900;
-        line-height: 1.05;
-        text-transform: uppercase;
-    }
+        .event-title {
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
 
-    .info-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 50px;
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin: 6px 6px 6px 0;
-    }
+        .info-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 6px 6px 6px 0;
+        }
 
-    .info-pill i { color: var(--goan-gold); }
+        .info-pill i { color: var(--goan-gold); }
 
-    /* Section cards */
-    .detail-card {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.07);
-        border-radius: 20px;
-        padding: 35px;
-        height: 100%;
-        transition: border-color 0.3s;
-    }
+        /* Section cards */
+        .detail-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 35px;
+            height: 100%;
+            transition: border-color 0.3s;
+        }
 
-    .detail-card:hover {
-        border-color: rgba(255,215,0,0.3);
-    }
+        .detail-card:hover {
+            border-color: rgba(255,215,0,0.3);
+        }
 
-    .detail-card h4 {
-        color: var(--goan-gold);
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
+        .detail-card h4 {
+            color: var(--goan-gold);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
 
-    .detail-card .icon-lg {
-        font-size: 2rem;
-        color: var(--goan-gold);
-        margin-bottom: 15px;
-        display: block;
-    }
+        .detail-card .icon-lg {
+            font-size: 2rem;
+            color: var(--goan-gold);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-    /* Coming soon placeholder */
-    .coming-soon-block {
-        background: rgba(255,215,0,0.04);
-        border: 1px dashed rgba(255,215,0,0.25);
-        border-radius: 16px;
-        padding: 30px;
-        text-align: center;
-    }
+        /* Coming soon placeholder */
+        .coming-soon-block {
+            background: rgba(255,215,0,0.04);
+            border: 1px dashed rgba(255,215,0,0.25);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
 
-    .coming-soon-block .label {
-        display: inline-block;
-        background: rgba(255,215,0,0.12);
-        color: var(--goan-gold);
-        font-size: 0.75rem;
-        font-weight: 800;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 5px 14px;
-        border-radius: 50px;
-        margin-bottom: 12px;
-    }
+        .coming-soon-block .label {
+            display: inline-block;
+            background: rgba(255,215,0,0.12);
+            color: var(--goan-gold);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
 
-    /* Countdown */
-    .countdown-wrap {
-        background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.05));
-        border: 1px solid rgba(255,215,0,0.2);
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-    }
+        /* Countdown */
+        .countdown-wrap {
+            background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.05));
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
 
-    .countdown-unit {
-        padding: 0 20px;
-    }
+        .countdown-unit {
+            padding: 0 20px;
+        }
 
-    .countdown-number {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        font-weight: 900;
-        color: var(--goan-gold);
-        line-height: 1;
-        display: block;
-    }
+        .countdown-number {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: var(--goan-gold);
+            line-height: 1;
+            display: block;
+        }
 
-    .countdown-label {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        opacity: 0.5;
-        font-weight: 700;
-    }
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            font-weight: 700;
+        }
 
-    .countdown-divider {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--goan-gold);
-        opacity: 0.4;
-        align-self: flex-start;
-        padding-top: 5px;
-    }
+        .countdown-divider {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--goan-gold);
+            opacity: 0.4;
+            align-self: flex-start;
+            padding-top: 5px;
+        }
 
-    /* Buttons */
-    .btn-gold {
-        background: linear-gradient(45deg, #FFD700, #FDB931);
-        color: #000 !important;
-        font-weight: 800;
-        border: none;
-        padding: 14px 40px;
-        border-radius: 50px;
-        transition: 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 0.9rem;
-        text-decoration: none;
-        display: inline-block;
-    }
+        /* Buttons */
+        .btn-gold {
+            background: linear-gradient(45deg, #FFD700, #FDB931);
+            color: #000 !important;
+            font-weight: 800;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-    .btn-gold:hover {
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-        transform: translateY(-2px);
-    }
+        .btn-gold:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
+        }
 
-    .btn-outline-gold {
-        border: 2px solid var(--goan-gold);
-        color: var(--goan-gold) !important;
-        font-weight: 800;
-        padding: 12px 35px;
-        border-radius: 50px;
-        transition: 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 0.9rem;
-        text-decoration: none;
-        display: inline-block;
-        background: transparent;
-    }
+        .btn-outline-gold {
+            border: 2px solid var(--goan-gold);
+            color: var(--goan-gold) !important;
+            font-weight: 800;
+            padding: 12px 35px;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            background: transparent;
+        }
 
-    .btn-outline-gold:hover {
-        background: var(--goan-gold);
-        color: #000 !important;
-    }
+        .btn-outline-gold:hover {
+            background: var(--goan-gold);
+            color: #000 !important;
+        }
 
-    .back-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: rgba(255,255,255,0.5);
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: color 0.3s;
-        margin-bottom: 30px;
-    }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            margin-bottom: 30px;
+        }
 
-    .back-link:hover { color: var(--goan-gold); }
+        .back-link:hover { color: var(--goan-gold); }
 
-    /* Map placeholder */
-    .map-placeholder {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 16px;
-        padding: 40px;
-        text-align: center;
-        min-height: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+        /* Map placeholder */
+        .map-placeholder {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    footer {
-        background: #020305;
-        padding: 50px 0 30px;
-        border-top: 1px solid rgba(255, 215, 0, 0.1);
-        text-align: center;
-    }
+        footer {
+            background: #020305;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            text-align: center;
+        }
 
-    .footer-logo {
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--goan-gold);
-        background-color: #fff;
-        margin-bottom: 15px;
-    }
-</style>
-```
-
+        .footer-logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--goan-gold);
+            background-color: #fff;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
 
-```
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="../index.html">
-            <img src="../images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
-            <div>GOAN<span class="text-white">READING BOYS</span></div>
-        </a>
-        <a href="../index.html#contact" class="btn btn-gold ms-auto" style="padding: 10px 25px; font-size: 0.8rem;">Register Interest</a>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
+                <div>GOAN<span class="text-white">READING BOYS</span></div>
+            </a>
+            <a href="../index.html#contact" class="btn btn-gold ms-auto" style="padding: 10px 25px; font-size: 0.8rem;">Register Interest</a>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<header class="event-hero">
-    <div class="container" data-aos="fade-up">
-        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
-        <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
-            <img src="../images/Food___Cullure.png" alt="Goan Food & Culture Festival Logo" style="width:220px; height:220px; aspect-ratio:1/1; object-fit:cover; background:#fff; border-radius:50%; border: 3px solid var(--goan-gold); box-shadow:0 0 30px rgba(255,215,0,0.3); flex-shrink:0;">
-            <span class="event-badge">⭐ Headline Event 2026</span>
+    <!-- HERO -->
+    <header class="event-hero">
+        <div class="container" data-aos="fade-up">
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
+            <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
+                <img src="../images/Food___Cullure.png" alt="Goan Food & Culture Festival Logo" style="width:220px; height:220px; aspect-ratio:1/1; object-fit:cover; background:#fff; border-radius:50%; border: 3px solid var(--goan-gold); box-shadow:0 0 30px rgba(255,215,0,0.3); flex-shrink:0;">
+                <span class="event-badge">⭐ Headline Event 2026</span>
+            </div>
+            <h1 class="event-title mb-3">Goan Food &<br><span style="color:var(--goan-gold)">Culture Festival</span></h1>
+            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A full day of music, food, culture and community — Reading's biggest Goan event of the year.</p>
+            <div class="d-flex flex-wrap">
+                <span class="info-pill"><i class="fas fa-calendar-alt"></i> Saturday, 8 August 2026</span>
+                <span class="info-pill"><i class="fas fa-sun"></i> Full Day Outdoor Event</span>
+                <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Reading, Berkshire</span>
+            </div>
         </div>
-        <h1 class="event-title mb-3">Goan Food &<br><span style="color:var(--goan-gold)">Culture Festival</span></h1>
-        <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A full day of music, food, culture and community — Reading's biggest Goan event of the year.</p>
-        <div class="d-flex flex-wrap">
-            <span class="info-pill"><i class="fas fa-calendar-alt"></i> Saturday, 8 August 2026</span>
-            <span class="info-pill"><i class="fas fa-sun"></i> Full Day Outdoor Event</span>
-            <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Reading, Berkshire</span>
-        </div>
-    </div>
-</header>
+    </header>
 
-<!-- COUNTDOWN -->
-<section class="py-5">
-    <div class="container" data-aos="fade-up">
-        <div class="countdown-wrap">
-            <p class="text-uppercase fw-bold opacity-50 mb-3" style="letter-spacing: 2px; font-size: 0.8rem;">Countdown to the Big Day</p>
-            <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
-                <div class="countdown-unit">
-                    <span class="countdown-number" id="cd-days">--</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <span class="countdown-divider">:</span>
-                <div class="countdown-unit">
-                    <span class="countdown-number" id="cd-hours">--</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <span class="countdown-divider">:</span>
-                <div class="countdown-unit">
-                    <span class="countdown-number" id="cd-minutes">--</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-                <span class="countdown-divider">:</span>
-                <div class="countdown-unit">
-                    <span class="countdown-number" id="cd-seconds">--</span>
-                    <span class="countdown-label">Seconds</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WHAT TO EXPECT -->
-<section class="py-5">
-    <div class="container">
-        <div class="mb-5" data-aos="fade-right">
-            <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">What's On</h6>
-            <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">What to Expect</h2>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                <div class="detail-card text-center">
-                    <i class="fas fa-music icon-lg"></i>
-                    <h4>Live Music</h4>
-                    <p class="opacity-75 fw-light">Live brass bands and DJ sets throughout the day. Full lineup announced by end of June.</p>
-                    <div class="coming-soon-block mt-3">
-                        <span class="label">Lineup — Coming June</span>
-                        <p class="opacity-50 small mb-0">Check back for band and DJ announcements</p>
+    <!-- COUNTDOWN -->
+    <section class="py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="countdown-wrap">
+                <p class="text-uppercase fw-bold opacity-50 mb-3" style="letter-spacing: 2px; font-size: 0.8rem;">Countdown to the Big Day</p>
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-days">--</span>
+                        <span class="countdown-label">Days</span>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="detail-card text-center">
-                    <i class="fas fa-utensils icon-lg"></i>
-                    <h4>Food Stalls</h4>
-                    <p class="opacity-75 fw-light">Authentic Goan street food and cuisine from a variety of food stall vendors.</p>
-                    <div class="coming-soon-block mt-3">
-                        <span class="label">Stalls — Coming June</span>
-                        <p class="opacity-50 small mb-0">Food stall lineup to be confirmed</p>
+                    <span class="countdown-divider">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-hours">--</span>
+                        <span class="countdown-label">Hours</span>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="detail-card text-center">
-                    <i class="fas fa-theater-masks icon-lg"></i>
-                    <h4>Cultural Performances</h4>
-                    <p class="opacity-75 fw-light">Traditional Goan cultural performances celebrating our rich heritage and community.</p>
-                    <div class="coming-soon-block mt-3">
-                        <span class="label">Details — Coming Soon</span>
-                        <p class="opacity-50 small mb-0">Performance schedule to follow</p>
+                    <span class="countdown-divider">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-minutes">--</span>
+                        <span class="countdown-label">Minutes</span>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                <div class="detail-card text-center">
-                    <i class="fas fa-child icon-lg"></i>
-                    <h4>Activities</h4>
-                    <p class="opacity-75 fw-light">Fun for the whole family. Activities and entertainment for all ages throughout the day.</p>
-                    <div class="coming-soon-block mt-3">
-                        <span class="label">Activities — Coming Soon</span>
-                        <p class="opacity-50 small mb-0">Full activity schedule to follow</p>
+                    <span class="countdown-divider">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-seconds">--</span>
+                        <span class="countdown-label">Seconds</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- LOCATION & PARKING -->
-<section class="py-5">
-    <div class="container">
-        <div class="mb-5" data-aos="fade-right">
-            <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here</h6>
-            <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Location & Parking</h2>
+    <!-- WHAT TO EXPECT -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-5" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">What's On</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">What to Expect</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-music icon-lg"></i>
+                        <h4>Live Music</h4>
+                        <p class="opacity-75 fw-light">Live brass bands and DJ sets throughout the day. Full lineup announced by end of June.</p>
+                        <div class="coming-soon-block mt-3">
+                            <span class="label">Lineup — Coming June</span>
+                            <p class="opacity-50 small mb-0">Check back for band and DJ announcements</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-utensils icon-lg"></i>
+                        <h4>Food Stalls</h4>
+                        <p class="opacity-75 fw-light">Authentic Goan street food and cuisine from a variety of food stall vendors.</p>
+                        <div class="coming-soon-block mt-3">
+                            <span class="label">Stalls — Coming June</span>
+                            <p class="opacity-50 small mb-0">Food stall lineup to be confirmed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-theater-masks icon-lg"></i>
+                        <h4>Cultural Performances</h4>
+                        <p class="opacity-75 fw-light">Traditional Goan cultural performances celebrating our rich heritage and community.</p>
+                        <div class="coming-soon-block mt-3">
+                            <span class="label">Details — Coming Soon</span>
+                            <p class="opacity-50 small mb-0">Performance schedule to follow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-child icon-lg"></i>
+                        <h4>Activities</h4>
+                        <p class="opacity-75 fw-light">Fun for the whole family. Activities and entertainment for all ages throughout the day.</p>
+                        <div class="coming-soon-block mt-3">
+                            <span class="label">Activities — Coming Soon</span>
+                            <p class="opacity-50 small mb-0">Full activity schedule to follow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row g-4 mb-4">
-            <div class="col-lg-6" data-aos="fade-right">
-                <div class="detail-card h-100">
-                    <i class="fas fa-map-marker-alt icon-lg"></i>
-                    <h4>Venue</h4>
-                    <h5 class="fw-bold mb-2" style="color:#fff;">Kings Meadow</h5>
-                    <p class="opacity-75 fw-light mb-3">Napier Road, Reading<br>RG1 8AB, United Kingdom</p>
-                    <p class="opacity-75 fw-light mb-4 small">A beautiful riverside park along the Thames — the perfect outdoor setting for our biggest event yet. Look out for the Goan Reading Boys signage on arrival.</p>
+    </section>
 
-                    <!-- Train Station -->
-                    <div style="background:rgba(13,202,240,0.08); border:1px solid rgba(13,202,240,0.3); border-radius:12px; padding:14px; margin-bottom:16px;">
-                        <p class="mb-1"><i class="fas fa-train me-2" style="color:var(--accent-blue);"></i><strong style="color:var(--accent-blue);">Reading Train Station</strong></p>
-                        <p class="opacity-75 fw-light small mb-2">Major hub with services from London Paddington, Reading–Crossrail, GWR, South Western & CrossCountry.</p>
-                        <p class="mb-2" style="color:var(--accent-blue); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> ~8 min walk to venue</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&origin=Reading+Station&destination=Kings+Meadow+Napier+Road+Reading+RG1+8AB&travelmode=walking" target="_blank" rel="noopener" style="color:var(--accent-blue); text-decoration:none; font-size:0.85rem; font-weight:600;">
-                            <i class="fas fa-directions me-1"></i> Walking Directions
+    <!-- HOSTS / MC LINEUP -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-5" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Meet The Hosts</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Our MCs</h2>
+                <p style="color:var(--text-muted); margin-top:12px;">Two incredible hosts will be guiding us through the day — meet our first announcement below.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- MC Delsy -->
+                <div class="col-md-6 col-lg-5" data-aos="fade-up">
+                    <div class="detail-card p-0" style="overflow:hidden;">
+                        <div style="position:relative; overflow:hidden;">
+                            <img src="../images/mc-delsy.jpg" alt="MC Delsy — Festival Host" style="width:100%; height:auto; display:block;">
+                        </div>
+                        <div style="padding:24px; text-align:center;">
+                            <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">MC Delsy</h3>
+                            <p class="opacity-60 small text-uppercase mb-0" style="letter-spacing:1.5px;">🎤 Festival Host</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Host 2 - Coming Soon -->
+                <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="150">
+                    <div class="detail-card h-100 d-flex flex-column justify-content-center align-items-center text-center" style="min-height:400px; background:rgba(255,215,0,0.04); border:2px dashed rgba(255,215,0,0.3);">
+                        <i class="fas fa-microphone-alt" style="font-size:4rem; color:var(--goan-gold); opacity:0.4; margin-bottom:20px;"></i>
+                        <h3 class="fw-bold mb-2" style="color:var(--goan-gold);">Host 2</h3>
+                        <p class="opacity-60 small text-uppercase mb-3" style="letter-spacing:1.5px;">Reveal Coming Soon</p>
+                        <p class="opacity-75 fw-light px-3">Our second host announcement is coming soon. Follow us on Instagram to be the first to know!</p>
+                        <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="mt-3" style="color:var(--goan-gold); text-decoration:none; font-weight:600; font-size:0.9rem;">
+                            <i class="fab fa-instagram me-1"></i> @goanreadingboys
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <a href="https://maps.app.goo.gl/EjxVf9EwdUS3Bvao9?g_st=ic" target="_blank" rel="noopener" class="btn-gold" style="padding:10px 24px; font-size:0.85rem; display:inline-block;">
-                        <i class="fas fa-directions me-2"></i> Get Directions
+    <!-- LOCATION & PARKING -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-5" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Location & Parking</h2>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="detail-card h-100">
+                        <i class="fas fa-map-marker-alt icon-lg"></i>
+                        <h4>Venue</h4>
+                        <h5 class="fw-bold mb-2" style="color:#fff;">Kings Meadow</h5>
+                        <p class="opacity-75 fw-light mb-3">Napier Road, Reading<br>RG1 8AB, United Kingdom</p>
+                        <p class="opacity-75 fw-light mb-4 small">A beautiful riverside park along the Thames — the perfect outdoor setting for our biggest event yet. Look out for the Goan Reading Boys signage on arrival.</p>
+
+                        <!-- Train Station -->
+                        <div style="background:rgba(13,202,240,0.08); border:1px solid rgba(13,202,240,0.3); border-radius:12px; padding:14px; margin-bottom:16px;">
+                            <p class="mb-1"><i class="fas fa-train me-2" style="color:var(--accent-blue);"></i><strong style="color:var(--accent-blue);">Reading Train Station</strong></p>
+                            <p class="opacity-75 fw-light small mb-2">Major hub with services from London Paddington, Reading–Crossrail, GWR, South Western & CrossCountry.</p>
+                            <p class="mb-2" style="color:var(--accent-blue); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> ~8 min walk to venue</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Reading+Station&destination=Kings+Meadow+Napier+Road+Reading+RG1+8AB&travelmode=walking" target="_blank" rel="noopener" style="color:var(--accent-blue); text-decoration:none; font-size:0.85rem; font-weight:600;">
+                                <i class="fas fa-directions me-1"></i> Walking Directions
+                            </a>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/EjxVf9EwdUS3Bvao9?g_st=ic" target="_blank" rel="noopener" class="btn-gold" style="padding:10px 24px; font-size:0.85rem; display:inline-block;">
+                            <i class="fas fa-directions me-2"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="detail-card h-100">
+                        <i class="fas fa-parking icon-lg"></i>
+                        <h4>Parking</h4>
+                        <p class="opacity-60 small mb-3"><i class="fas fa-info-circle me-1"></i> Weekend tariffs shown (Saturday event)</p>
+                        <div style="background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.3); border-radius:12px; padding:16px; margin-bottom:14px;">
+                            <p class="mb-2"><strong style="color:var(--goan-gold);">⭐ Kings Meadow Car Park (At Venue)</strong></p>
+                            <p class="opacity-75 fw-light small mb-2">Napier Road, Reading, RG1 8DF<br>95 spaces • 1 disabled bay • Open 24hrs</p>
+                            <p class="mb-2" style="color:var(--goan-gold); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> 2 min walk to venue</p>
+                            <p class="opacity-75 fw-light small mb-2" style="line-height:1.6;">
+                                <strong style="color:#fff;">Weekend rates:</strong><br>
+                                Up to 3 hrs: £3.10 • Up to 6 hrs: £5.50 • Up to 24 hrs: £11
+                            </p>
+                            <p class="opacity-60 small mb-2" style="font-size:0.78rem;">💳 Cards & RingGo (code <strong>9472</strong>)</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Kings+Meadow+Car+Park+Napier+Road+Reading+RG1+8DF" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem; font-weight:600;">
+                                <i class="fas fa-directions me-1"></i> Get Directions
+                            </a>
+                        </div>
+
+                        <!-- Hills Meadow -->
+                        <div style="background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.3); border-radius:12px; padding:16px; margin-bottom:14px;">
+                            <p class="mb-2"><strong style="color:var(--goan-gold);">⭐ Hills Meadow Car Park</strong></p>
+                            <p class="opacity-75 fw-light small mb-2">George Street, Caversham, Reading, RG4 8DH<br>298 spaces • 12 disabled bays • Open 24hrs</p>
+                            <p class="mb-2" style="color:var(--goan-gold); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> 7 min walk to venue</p>
+                            <p class="opacity-75 fw-light small mb-2" style="line-height:1.6;">
+                                <strong style="color:#fff;">Weekend rates:</strong><br>
+                                Up to 3 hrs: £3.10 • Up to 6 hrs: £5.10 • Up to 24 hrs: £10
+                            </p>
+                            <p class="opacity-60 small mb-2" style="font-size:0.78rem;">💳 Cards & RingGo (code <strong>9471</strong>)</p>
+                            <a href="https://maps.app.goo.gl/VFZvGNyNbhzYMcmXA" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem; font-weight:600;">
+                                <i class="fas fa-directions me-1"></i> Get Directions
+                            </a>
+                        </div>
+
+                        <p class="opacity-75 fw-light mb-2 small"><strong style="color:#fff;">Other nearby car parks:</strong></p>
+                        <div style="padding-left:0; list-style:none;">
+                            <div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <p class="mb-1 small fw-bold" style="color:#fff;">Queens Road Car Park</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">RG1 4PX (satnav RG1 4AR) • 700 spaces • Multi-storey • <i class="fas fa-walking me-1"></i> ~15 min walk</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Weekend: 3 hrs £5.10 • 6 hrs £7.10 • 24 hrs £8.10 • 💳 Contactless tap in/out</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Queens+Road+Car+Park+Reading+RG1+4PX" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
+                                    <i class="fas fa-directions me-1"></i> Directions
+                                </a>
+                            </div>
+                            <div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <p class="mb-1 small fw-bold" style="color:#fff;">Holy Brook Car Park (The Oracle)</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Bridge Street, RG1 2LR • Multi-storey • <i class="fas fa-walking me-1"></i> ~20 min walk</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">ANPR — Tap to pay or register online • 💳 Card only, no cash</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Holy+Brook+Car+Park+Bridge+Street+Reading+RG1+2LR" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
+                                    <i class="fas fa-directions me-1"></i> Directions
+                                </a>
+                            </div>
+                            <div style="padding:10px 0;">
+                                <p class="mb-1 small fw-bold" style="color:#fff;">Riverside Car Park (The Oracle)</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Mill Lane, RG1 2AG • Multi-storey • <i class="fas fa-walking me-1"></i> ~20 min walk</p>
+                                <p class="opacity-60 small mb-1" style="font-size:0.78rem;">ANPR — Tap to pay or register online • 💳 Card only, no cash</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Riverside+Car+Park+Mill+Lane+Reading+RG1+2AG" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
+                                    <i class="fas fa-directions me-1"></i> Directions
+                                </a>
+                            </div>
+                        </div>
+                        <p class="opacity-50 fw-light small mb-0 mt-3"><i class="fas fa-info-circle me-1"></i> Spaces fill quickly — arrive early or use public transport.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Embedded Google Map -->
+            <div data-aos="fade-up">
+                <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); box-shadow:0 10px 40px rgba(0,0,0,0.3);">
+                    <iframe src="https://maps.google.com/maps?q=Kings+Meadow+Napier+Road+Reading+RG1+8AB&t=k&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAY UPDATED CTA -->
+    <section class="py-5 my-3">
+        <div class="container" data-aos="zoom-in">
+            <div class="text-center p-5 rounded-4" style="background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.04)); border: 1px solid rgba(255,215,0,0.2);">
+                <i class="fab fa-instagram mb-3" style="font-size: 2.5rem; color: var(--goan-gold);"></i>
+                <h3 class="fw-bold mb-2">Stay in the Loop</h3>
+                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px;">Band and DJ lineup, food stalls, and full activity details will all be announced by end of June. Follow us on Instagram for the latest updates.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn-gold">
+                        <i class="fab fa-instagram me-2"></i> Follow on Instagram
                     </a>
-                </div>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="detail-card h-100">
-                    <i class="fas fa-parking icon-lg"></i>
-                    <h4>Parking</h4>
-                    <p class="opacity-60 small mb-3"><i class="fas fa-info-circle me-1"></i> Weekend tariffs shown (Saturday event)</p>
-                    <div style="background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.3); border-radius:12px; padding:16px; margin-bottom:14px;">
-                        <p class="mb-2"><strong style="color:var(--goan-gold);">⭐ Kings Meadow Car Park (At Venue)</strong></p>
-                        <p class="opacity-75 fw-light small mb-2">Napier Road, Reading, RG1 8DF<br>95 spaces • 1 disabled bay • Open 24hrs</p>
-                        <p class="mb-2" style="color:var(--goan-gold); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> 2 min walk to venue</p>
-                        <p class="opacity-75 fw-light small mb-2" style="line-height:1.6;">
-                            <strong style="color:#fff;">Weekend rates:</strong><br>
-                            Up to 3 hrs: £3.10 • Up to 6 hrs: £5.50 • Up to 24 hrs: £11
-                        </p>
-                        <p class="opacity-60 small mb-2" style="font-size:0.78rem;">💳 Cards & RingGo (code <strong>9472</strong>)</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Kings+Meadow+Car+Park+Napier+Road+Reading+RG1+8DF" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem; font-weight:600;">
-                            <i class="fas fa-directions me-1"></i> Get Directions
-                        </a>
-                    </div>
-
-                    <!-- Hills Meadow -->
-                    <div style="background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.3); border-radius:12px; padding:16px; margin-bottom:14px;">
-                        <p class="mb-2"><strong style="color:var(--goan-gold);">⭐ Hills Meadow Car Park</strong></p>
-                        <p class="opacity-75 fw-light small mb-2">George Street, Caversham, Reading, RG4 8DH<br>298 spaces • 12 disabled bays • Open 24hrs</p>
-                        <p class="mb-2" style="color:var(--goan-gold); font-size:0.85rem; font-weight:600;"><i class="fas fa-walking me-1"></i> 7 min walk to venue</p>
-                        <p class="opacity-75 fw-light small mb-2" style="line-height:1.6;">
-                            <strong style="color:#fff;">Weekend rates:</strong><br>
-                            Up to 3 hrs: £3.10 • Up to 6 hrs: £5.10 • Up to 24 hrs: £10
-                        </p>
-                        <p class="opacity-60 small mb-2" style="font-size:0.78rem;">💳 Cards & RingGo (code <strong>9471</strong>)</p>
-                        <a href="https://maps.app.goo.gl/VFZvGNyNbhzYMcmXA" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem; font-weight:600;">
-                            <i class="fas fa-directions me-1"></i> Get Directions
-                        </a>
-                    </div>
-
-                    <p class="opacity-75 fw-light mb-2 small"><strong style="color:#fff;">Other nearby car parks:</strong></p>
-                    <div style="padding-left:0; list-style:none;">
-                        <div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
-                            <p class="mb-1 small fw-bold" style="color:#fff;">Queens Road Car Park</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">RG1 4PX (satnav RG1 4AR) • 700 spaces • Multi-storey • <i class="fas fa-walking me-1"></i> ~15 min walk</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Weekend: 3 hrs £5.10 • 6 hrs £7.10 • 24 hrs £8.10 • 💳 Contactless tap in/out</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Queens+Road+Car+Park+Reading+RG1+4PX" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
-                                <i class="fas fa-directions me-1"></i> Directions
-                            </a>
-                        </div>
-                        <div style="padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
-                            <p class="mb-1 small fw-bold" style="color:#fff;">Holy Brook Car Park (The Oracle)</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Bridge Street, RG1 2LR • Multi-storey • <i class="fas fa-walking me-1"></i> ~20 min walk</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">ANPR — Tap to pay or register online • 💳 Card only, no cash</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Holy+Brook+Car+Park+Bridge+Street+Reading+RG1+2LR" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
-                                <i class="fas fa-directions me-1"></i> Directions
-                            </a>
-                        </div>
-                        <div style="padding:10px 0;">
-                            <p class="mb-1 small fw-bold" style="color:#fff;">Riverside Car Park (The Oracle)</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">Mill Lane, RG1 2AG • Multi-storey • <i class="fas fa-walking me-1"></i> ~20 min walk</p>
-                            <p class="opacity-60 small mb-1" style="font-size:0.78rem;">ANPR — Tap to pay or register online • 💳 Card only, no cash</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Riverside+Car+Park+Mill+Lane+Reading+RG1+2AG" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.78rem;">
-                                <i class="fas fa-directions me-1"></i> Directions
-                            </a>
-                        </div>
-                    </div>
-                    <p class="opacity-50 fw-light small mb-0 mt-3"><i class="fas fa-info-circle me-1"></i> Spaces fill quickly — arrive early or use public transport.</p>
+                    <a href="../index.html#contact" class="btn-outline-gold">Register Interest</a>
                 </div>
             </div>
         </div>
-        <!-- Embedded Google Map -->
-        <div data-aos="fade-up">
-            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); box-shadow:0 10px 40px rgba(0,0,0,0.3);">
-                <iframe src="https://maps.google.com/maps?q=Kings+Meadow+Napier+Road+Reading+RG1+8AB&t=k&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="../images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
+            <h5 class="fw-bold mb-1">GOAN<span style="color:var(--goan-gold)">READING BOYS</span></h5>
+            <p class="opacity-50 fw-light small mb-4">Bringing the Soul of Goa to the Heart of Berkshire.</p>
+            <p class="opacity-50 small">&copy; 2026 Goan Reading Boys. All Rights Reserved.</p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- STAY UPDATED CTA -->
-<section class="py-5 my-3">
-    <div class="container" data-aos="zoom-in">
-        <div class="text-center p-5 rounded-4" style="background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.04)); border: 1px solid rgba(255,215,0,0.2);">
-            <i class="fab fa-instagram mb-3" style="font-size: 2.5rem; color: var(--goan-gold);"></i>
-            <h3 class="fw-bold mb-2">Stay in the Loop</h3>
-            <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px;">Band and DJ lineup, food stalls, and full activity details will all be announced by end of June. Follow us on Instagram for the latest updates.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn-gold">
-                    <i class="fab fa-instagram me-2"></i> Follow on Instagram
-                </a>
-                <a href="../index.html#contact" class="btn-outline-gold">Register Interest</a>
-            </div>
-        </div>
-    </div>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
 
-<footer>
-    <div class="container">
-        <img src="../images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
-        <h5 class="fw-bold mb-1">GOAN<span style="color:var(--goan-gold)">READING BOYS</span></h5>
-        <p class="opacity-50 fw-light small mb-4">Bringing the Soul of Goa to the Heart of Berkshire.</p>
-        <p class="opacity-50 small">&copy; 2026 Goan Reading Boys. All Rights Reserved.</p>
-    </div>
-</footer>
+        // Countdown to 8 August 2026
+        function updateCountdown() {
+            const eventDate = new Date('2026-08-08T12:00:00');
+            const now = new Date();
+            const diff = eventDate - now;
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-minutes').textContent = '0';
+                document.getElementById('cd-seconds').textContent = '0';
+                return;
+            }
 
-    // Countdown to 8 August 2026
-    function updateCountdown() {
-        const eventDate = new Date('2026-08-08T12:00:00');
-        const now = new Date();
-        const diff = eventDate - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        if (diff <= 0) {
-            document.getElementById('cd-days').textContent = '0';
-            document.getElementById('cd-hours').textContent = '0';
-            document.getElementById('cd-minutes').textContent = '0';
-            document.getElementById('cd-seconds').textContent = '0';
-            return;
+            document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
         }
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
-        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-</script>
-```
-
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
