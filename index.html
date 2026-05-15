@@ -550,5 +550,265 @@
 </script>
 ```
 
+```
+<!-- WhatsApp Chat Widget -->
+<style>
+    .wa-widget-button {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 14px 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+        z-index: 9998;
+        transition: all 0.3s ease;
+        animation: wa-pulse 2s ease-in-out infinite;
+    }
+    .wa-widget-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+    }
+    .wa-widget-button i {
+        font-size: 1.5rem;
+    }
+    @keyframes wa-pulse {
+        0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+        50% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 12px rgba(37, 211, 102, 0); }
+    }
+
+    /* Chat Popup Box */
+    .wa-chat-popup {
+        position: fixed;
+        bottom: 95px;
+        right: 25px;
+        width: 340px;
+        max-width: calc(100vw - 40px);
+        background: #ECE5DD;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        z-index: 9999;
+        overflow: hidden;
+        font-family: 'Outfit', sans-serif;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.95);
+        transition: all 0.3s ease;
+    }
+    .wa-chat-popup.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    .wa-chat-header {
+        background: #075E54;
+        color: #fff;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+    }
+    .wa-chat-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255,255,255,0.3);
+        background: #fff;
+    }
+    .wa-chat-header-info {
+        flex: 1;
+    }
+    .wa-chat-header-info h4 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .wa-chat-header-info p {
+        margin: 0;
+        font-size: 0.78rem;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .wa-online-dot {
+        width: 8px;
+        height: 8px;
+        background: #25D366;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 0 2px rgba(37,211,102,0.3);
+    }
+    .wa-chat-close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.4rem;
+        cursor: pointer;
+        opacity: 0.7;
+        padding: 4px 8px;
+        line-height: 1;
+        transition: opacity 0.2s;
+    }
+    .wa-chat-close:hover { opacity: 1; }
+
+    /* Chat body - WhatsApp-style background */
+    .wa-chat-body {
+        padding: 20px 16px;
+        min-height: 140px;
+        background-color: #E5DDD5;
+        background-image: 
+            radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 8%),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 6%),
+            radial-gradient(circle at 60% 80%, rgba(255,255,255,0.35) 0%, transparent 7%),
+            radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, transparent 5%);
+    }
+    .wa-msg-bubble {
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: #303030;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        max-width: 85%;
+        position: relative;
+        animation: wa-msg-in 0.4s ease;
+    }
+    .wa-msg-bubble::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -8px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 8px 0;
+        border-color: transparent #fff transparent transparent;
+    }
+    .wa-msg-time {
+        font-size: 0.7rem;
+        color: #999;
+        float: right;
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+    @keyframes wa-msg-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer with action button */
+    .wa-chat-footer {
+        background: #f0f0f0;
+        padding: 14px 16px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .wa-start-chat-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 16px;
+        border-radius: 24px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+        font-family: 'Outfit', sans-serif;
+    }
+    .wa-start-chat-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37,211,102,0.4);
+        color: #fff;
+    }
+    .wa-start-chat-btn i {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 576px) {
+        .wa-widget-button {
+            bottom: 16px;
+            right: 16px;
+            padding: 12px 18px;
+            font-size: 0.85rem;
+        }
+        .wa-chat-popup {
+            bottom: 80px;
+            right: 16px;
+            left: 16px;
+            width: auto;
+        }
+    }
+</style>
+
+<!-- Chat Popup -->
+<div class="wa-chat-popup" id="waChatPopup" role="dialog" aria-label="Chat with Goan Reading Boys">
+    <div class="wa-chat-header">
+        <img src="https://goanreadingboys.co.uk/images/rgb-logo.png" alt="GRB" class="wa-chat-avatar" onerror="this.style.display='none'">
+        <div class="wa-chat-header-info">
+            <h4>Goan Reading Boys</h4>
+            <p><span class="wa-online-dot"></span> Typically replies within an hour</p>
+        </div>
+        <button class="wa-chat-close" onclick="closeWaChat()" aria-label="Close chat">×</button>
+    </div>
+    <div class="wa-chat-body">
+        <div class="wa-msg-bubble">
+            👋 Hi there! Thanks for visiting!
+            <span class="wa-msg-time">now</span>
+        </div>
+        <div class="wa-msg-bubble">
+            How can we help you today? Click below to start a chat on WhatsApp and we'll get back to you shortly.
+            <span class="wa-msg-time">now</span>
+        </div>
+    </div>
+    <div class="wa-chat-footer">
+        <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%20have%20a%20question." target="_blank" rel="noopener" class="wa-start-chat-btn">
+            <i class="fab fa-whatsapp"></i> Start Chat on WhatsApp
+        </a>
+    </div>
+</div>
+
+<!-- Floating Button -->
+<button class="wa-widget-button" onclick="toggleWaChat()" aria-label="Open chat">
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp Us</span>
+</button>
+
+<script>
+    function toggleWaChat() {
+        document.getElementById('waChatPopup').classList.toggle('active');
+    }
+    function closeWaChat() {
+        document.getElementById('waChatPopup').classList.remove('active');
+    }
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+        const popup = document.getElementById('waChatPopup');
+        const btn = document.querySelector('.wa-widget-button');
+        if (popup && btn && popup.classList.contains('active') && !popup.contains(e.target) && !btn.contains(e.target)) {
+            popup.classList.remove('active');
+        }
+    });
+</script>
+```
+
 </body>
 </html>
