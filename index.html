@@ -508,7 +508,7 @@
 
     // ── COUNTDOWN ──
     function updateCountdown() {
-        const diff = new Date('2026-08-08T13:00:00') - new Date();
+        const diff = new Date('2026-08-08T12:00:00') - new Date();
         if (diff <= 0) return;
         const pad = n => String(Math.floor(n)).padStart(2,'0');
         document.getElementById('h-days').textContent  = pad(diff / 86400000);
