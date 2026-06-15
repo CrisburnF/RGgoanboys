@@ -292,9 +292,39 @@
             background-color: #fff;
             margin-bottom: 15px;
         }
+
+        /* Loading screen */
+        #loader {
+            position: fixed; inset: 0;
+            background: var(--deep-navy);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        #loader img {
+            width: 200px; height: 200px; object-fit: contain;
+            border-radius: 50%;
+            animation: loaderPulse 1.5s ease-in-out infinite;
+        }
+        #loader p {
+            color: var(--goan-gold); font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            font-size: 0.8rem; margin-top: 22px;
+        }
+        @keyframes loaderPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.5); transform: scale(1); }
+            50% { box-shadow: 0 0 0 22px rgba(255,215,0,0); transform: scale(1.04); }
+        }
     </style>
 </head>
 <body>
+
+    <div id="loader">
+        <img src="../images/Food___Cullure.png" alt="Goan Food & Culture Festival 2026">
+        <p>Goan Food &amp; Culture Festival</p>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -686,6 +716,14 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+        // Hide loading screen once page is ready (with a short minimum so it doesn't flash)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const l = document.getElementById('loader');
+                if (l) l.classList.add('hidden');
+            }, 700);
+        });
 
         // Countdown to 8 August 2026
         function updateCountdown() {
