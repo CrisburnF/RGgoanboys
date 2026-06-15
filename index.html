@@ -2,6 +2,19 @@
 
 <html lang="en">
 <head>
+    <!-- Temporary festival redirect: sends bare-domain visitors to /festival.
+         Skips when ?home=1 is present (e.g. clicking the GRB logo or "Back to all events").
+         To disable after 8 Aug 2026, remove this whole script block. -->
+    <script>
+      (function () {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (!params.has('home')) {
+            window.location.replace('festival/');
+          }
+        } catch (e) { /* if anything fails, just stay on the homepage */ }
+      })();
+    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DKE5NXZ19"></script>
     <script>
@@ -219,7 +232,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html?home=1">
             <img src="./images/rgb-logo.png" alt="GRB Logo" class="nav-logo">
             <div>GOAN<span style="color:var(--text-primary)">READING BOYS</span></div>
         </a>
