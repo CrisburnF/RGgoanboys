@@ -48,7 +48,7 @@
         --socials-border: rgba(255,255,255,0.05);
     }
 
-    html { scroll-padding-top: 100px; }
+    html { scroll-padding-top: 110px; }
 
     body {
         background-color: var(--bg-primary);
@@ -76,6 +76,21 @@
 
 
     /* ── NAVBAR ── */
+    .festival-bar {
+        position: fixed; top: 0; left: 0; width: 100%;
+        z-index: 1100;
+        background: linear-gradient(45deg,#FFD700,#FDB931);
+        color: #000 !important; text-decoration: none;
+        font-weight: 700; font-size: 0.82rem;
+        text-align: center; padding: 9px 12px;
+        line-height: 1.3; letter-spacing: 0.3px;
+        display: block;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        transition: filter 0.3s;
+    }
+    .festival-bar:hover { filter: brightness(1.08); color:#000 !important; }
+    .festival-bar strong { text-decoration: underline; white-space: nowrap; }
+
     .navbar {
         background: var(--navbar-bg) !important;
         backdrop-filter: blur(15px);
@@ -84,6 +99,7 @@
         z-index: 1000;
         transition: all 0.3s ease;
     }
+    .navbar.fixed-top { top: 39px; }
 
     .navbar-brand {
         font-weight: 900; letter-spacing: 1.5px;
@@ -199,6 +215,8 @@
     <p>Goan Reading Boys</p>
 </div>
 
+<a href="festival/" class="festival-bar">🎟️ Goan Food &amp; Culture Festival · 8 Aug 2026 · <strong>Buy Tickets →</strong></a>
+
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
@@ -210,6 +228,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link px-3 nav-close" href="festival/" style="color:var(--goan-gold) !important; font-weight:800;">Festival</a></li>
                 <li class="nav-item"><a class="nav-link px-3 nav-close" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link px-3 nav-close" href="#events">Upcoming</a></li>
                 <li class="nav-item"><a class="nav-link px-3 nav-close" href="#past-events">Past Events</a></li>
@@ -229,8 +248,8 @@
         <h1 class="hero-title">Elevating the <br><span style="color:var(--goan-gold)">Goan Experience</span></h1>
         <p class="lead mb-4 mx-auto fw-light" style="max-width:700px; color:rgba(255,255,255,0.75);">Join the Goan Reading Boys for the most anticipated cultural gatherings in the UK. Unforgettable nights, authentic vibes.</p>
         <div class="d-flex justify-content-center gap-3 flex-wrap mb-2">
-            <a href="#events" class="btn btn-gold">View Calendar</a>
-            <a href="#about" class="btn btn-outline-light rounded-pill px-4 fw-bold" style="padding-top:12px; padding-bottom:12px;">Discover More</a>
+            <a href="festival/" class="btn btn-gold"><i class="fas fa-ticket-alt me-2"></i>Festival 2026 — Get Tickets</a>
+            <a href="#events" class="btn btn-outline-light rounded-pill px-4 fw-bold" style="padding-top:12px; padding-bottom:12px;">View Calendar</a>
         </div>
         <!-- Live countdown on hero -->
         <div class="hero-countdown" data-aos="fade-up" data-aos-delay="400">
