@@ -318,40 +318,57 @@
             50% { box-shadow: 0 0 0 22px rgba(255,215,0,0); transform: scale(1.04); }
         }
 
-        /* Timed ticket nudge */
+        /* Timed ticket nudge — centered popup */
+        #ticketNudgeOverlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 10050;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+        #ticketNudgeOverlay.show { opacity: 1; visibility: visible; }
         #ticketNudge {
-            position: fixed;
-            left: 50%;
-            bottom: -240px;
-            transform: translateX(-50%);
-            width: min(480px, calc(100% - 24px));
             background: linear-gradient(160deg, #0B1226, #101A35);
             border: 1px solid rgba(255,215,0,0.45);
-            border-radius: 18px;
-            padding: 18px 20px;
-            z-index: 10050;
-            box-shadow: 0 18px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255,215,0,0.12);
-            transition: bottom 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-            display: flex;
-            align-items: center;
-            gap: 14px;
+            border-radius: 22px;
+            padding: 34px 28px 28px;
+            width: min(420px, 100%);
+            text-align: center;
+            position: relative;
+            box-shadow: 0 24px 70px rgba(0,0,0,0.65), 0 0 40px rgba(255,215,0,0.15);
+            transform: scale(0.9) translateY(12px);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        #ticketNudge.show { bottom: 18px; }
-        #ticketNudge .tn-emoji { font-size: 2rem; flex-shrink: 0; }
-        #ticketNudge .tn-text { flex: 1; min-width: 0; }
-        #ticketNudge .tn-text strong { display: block; color: #fff; font-size: 0.98rem; }
-        #ticketNudge .tn-text span { color: var(--goan-gold); font-size: 0.82rem; font-weight: 600; }
+        #ticketNudgeOverlay.show #ticketNudge { transform: scale(1) translateY(0); }
+        #ticketNudge .tn-emoji { font-size: 2.6rem; display: block; margin-bottom: 10px; }
+        #ticketNudge .tn-text strong { display: block; color: #fff; font-size: 1.25rem; font-weight: 900; margin-bottom: 6px; }
+        #ticketNudge .tn-text span { display: block; color: var(--goan-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
         #ticketNudge .tn-btn {
             background: linear-gradient(45deg,#FFD700,#FDB931);
             color: #000; font-weight: 800; border: none; cursor: pointer;
-            border-radius: 50px; padding: 11px 20px; font-size: 0.85rem;
-            font-family: 'Outfit', sans-serif; white-space: nowrap; flex-shrink: 0;
+            border-radius: 50px; padding: 14px 36px; font-size: 0.95rem;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 8px 24px rgba(255,215,0,0.35);
+            animation: ticketPulse 2.5s ease-in-out infinite;
         }
+        #ticketNudge .tn-later {
+            display: block; margin: 14px auto 0;
+            background: none; border: none; cursor: pointer;
+            color: rgba(255,255,255,0.45); font-size: 0.8rem;
+            font-family: 'Outfit', sans-serif; text-decoration: underline;
+        }
+        #ticketNudge .tn-later:hover { color: rgba(255,255,255,0.7); }
         #ticketNudge .tn-close {
-            position: absolute; top: 6px; right: 10px;
+            position: absolute; top: 10px; right: 14px;
             background: none; border: none; color: rgba(255,255,255,0.45);
-            font-size: 1.1rem; cursor: pointer; padding: 4px; line-height: 1;
+            font-size: 1.3rem; cursor: pointer; padding: 4px; line-height: 1;
         }
+        #ticketNudge .tn-close:hover { color: #fff; }
     </style>
 </head>
 <body>
@@ -1140,19 +1157,22 @@
             }
         }
     </style>
-    <!-- Timed ticket nudge -->
-    <div id="ticketNudge" role="dialog" aria-label="Buy tickets prompt">
-        <button class="tn-close" onclick="dismissTicketNudge()" aria-label="Dismiss">&times;</button>
-        <div class="tn-emoji">🎟️</div>
-        <div class="tn-text">
-            <strong>🔥 Tickets are selling fast!</strong>
-            <span>Don't miss out · £15 each · Kids 10 &amp; under free</span>
+    <!-- Timed ticket nudge (centered popup) -->
+    <div id="ticketNudgeOverlay" role="dialog" aria-label="Buy tickets prompt" onclick="if(event.target===this)dismissTicketNudge()">
+        <div id="ticketNudge">
+            <button class="tn-close" onclick="dismissTicketNudge()" aria-label="Dismiss">&times;</button>
+            <span class="tn-emoji">🎟️</span>
+            <div class="tn-text">
+                <strong>🔥 Limited Tickets Left!</strong>
+                <span>Selling fast — don't miss out · £15 each · Kids 10 &amp; under free</span>
+            </div>
+            <button class="tn-btn" onclick="dismissTicketNudge(); openTicketPurchase();">Buy Tickets Now</button>
+            <button class="tn-later" onclick="dismissTicketNudge()">Maybe later</button>
         </div>
-        <button class="tn-btn" onclick="dismissTicketNudge(); openTicketPurchase();">Buy Tickets</button>
     </div>
     <script>
         function dismissTicketNudge() {
-            const n = document.getElementById('ticketNudge');
+            const n = document.getElementById('ticketNudgeOverlay');
             if (n) n.classList.remove('show');
             try { sessionStorage.setItem('tnDismissed', '1'); } catch (e) {}
         }
@@ -1164,7 +1184,7 @@
                     // Don't interrupt if they already opened the ticket modal
                     const modal = document.getElementById('ticketPurchase');
                     const modalOpen = modal && modal.classList.contains('active');
-                    if (!modalOpen) document.getElementById('ticketNudge').classList.add('show');
+                    if (!modalOpen) document.getElementById('ticketNudgeOverlay').classList.add('show');
                 }, 6000);
             }
         });
@@ -1336,7 +1356,7 @@
         }
         .qty-selector {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 8px;
             margin-bottom: 14px;
         }
@@ -1423,6 +1443,7 @@
             </div>
             <h3>Get Your Tickets</h3>
             <p class="subtitle">Goan Food & Cultural Festival 2026 — £15 per ticket</p>
+            <p style="text-align:center; color:#FF6B6B; font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; margin:-14px 0 16px;">🔥 Limited tickets left — selling fast!</p>
             <div style="background:rgba(255,215,0,0.1); border:1px solid rgba(255,215,0,0.35); border-radius:12px; padding:12px 16px; margin:0 0 22px; text-align:center;">
                 <span style="color:var(--goan-gold); font-weight:700;">👶 Children 10 &amp; under go free!</span>
                 <span style="display:block; color:var(--text-muted); font-size:0.85rem; margin-top:4px;">No ticket needed — just bring them along on the day.</span>
@@ -1448,6 +1469,30 @@
                     <div class="qty-option" data-qty="4" data-link="https://pay.sumup.com/b2c/QNT6JIMP" onclick="selectQty(this)">
                         <span class="qty-num">4</span>
                         <span class="qty-price">£60</span>
+                    </div>
+                    <div class="qty-option" data-qty="5" data-link="https://pay.sumup.com/b2c/QUQJOK7I" onclick="selectQty(this)">
+                        <span class="qty-num">5</span>
+                        <span class="qty-price">£75</span>
+                    </div>
+                    <div class="qty-option" data-qty="6" data-link="https://pay.sumup.com/b2c/QJZFC5SY" onclick="selectQty(this)">
+                        <span class="qty-num">6</span>
+                        <span class="qty-price">£90</span>
+                    </div>
+                    <div class="qty-option" data-qty="7" data-link="https://pay.sumup.com/b2c/QMIFW9ZG" onclick="selectQty(this)">
+                        <span class="qty-num">7</span>
+                        <span class="qty-price">£105</span>
+                    </div>
+                    <div class="qty-option" data-qty="8" data-link="https://pay.sumup.com/b2c/QOAAM37B" onclick="selectQty(this)">
+                        <span class="qty-num">8</span>
+                        <span class="qty-price">£120</span>
+                    </div>
+                    <div class="qty-option" data-qty="9" data-link="https://pay.sumup.com/b2c/QH2KVFVF" onclick="selectQty(this)">
+                        <span class="qty-num">9</span>
+                        <span class="qty-price">£135</span>
+                    </div>
+                    <div class="qty-option" data-qty="10" data-link="https://pay.sumup.com/b2c/Q4IGNI60" onclick="selectQty(this)">
+                        <span class="qty-num">10</span>
+                        <span class="qty-price">£150</span>
                     </div>
                 </div>
 
@@ -1477,8 +1522,8 @@
                     <i class="fas fa-lock me-2"></i> Continue to Secure Payment
                 </button>
 
-                <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%27d%20like%20to%20purchase%205%20or%20more%20tickets%20for%20the%20festival." target="_blank" rel="noopener" class="more-tickets-link">
-                    <i class="fab fa-whatsapp me-1"></i> Need 5 or more tickets? Contact us on WhatsApp
+                <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%27d%20like%20to%20purchase%20more%20than%2010%20tickets%20for%20the%20festival." target="_blank" rel="noopener" class="more-tickets-link">
+                    <i class="fab fa-whatsapp me-1"></i> Need more than 10 tickets? Contact us on WhatsApp
                 </a>
 
                 <p class="privacy-note">🔒 Your details are submitted securely. You'll then be redirected to SumUp to complete payment. Your ticket reference will be emailed to you within 24 hours of payment.</p>
