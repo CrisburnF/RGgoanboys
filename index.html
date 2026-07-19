@@ -574,7 +574,7 @@
     }, { threshold: 0.6 });
     document.querySelectorAll('.stat-number').forEach(el => statsObserver.observe(el));
 
-    // ── FORMSPREE ──
+    // ── CONTACT FORM (submits to Apps Script backend) ──
     const form = document.getElementById('contact-form');
     if (form) {
         form.addEventListener('submit', async e => {
@@ -1015,7 +1015,7 @@
         }
         .qty-selector {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 8px;
             margin-bottom: 14px;
         }
@@ -1106,6 +1106,7 @@
             </div>
             <h3>Get Your Tickets</h3>
             <p class="subtitle">Goan Food & Cultural Festival 2026 — £15 per ticket</p>
+            <p style="text-align:center; color:#FF6B6B; font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; margin:-14px 0 16px;">🔥 Limited tickets left — selling fast!</p>
             <div style="background:rgba(255,215,0,0.1); border:1px solid rgba(255,215,0,0.35); border-radius:12px; padding:12px 16px; margin:0 0 22px; text-align:center;">
                 <span style="color:var(--goan-gold); font-weight:700;">👶 Children 10 &amp; under go free!</span>
                 <span style="display:block; color:var(--text-muted); font-size:0.85rem; margin-top:4px;">No ticket needed — just bring them along on the day.</span>
@@ -1131,6 +1132,30 @@
                     <div class="qty-option" data-qty="4" data-link="https://pay.sumup.com/b2c/QNT6JIMP" onclick="selectQty(this)">
                         <span class="qty-num">4</span>
                         <span class="qty-price">£60</span>
+                    </div>
+                    <div class="qty-option" data-qty="5" data-link="https://pay.sumup.com/b2c/QUQJOK7I" onclick="selectQty(this)">
+                        <span class="qty-num">5</span>
+                        <span class="qty-price">£75</span>
+                    </div>
+                    <div class="qty-option" data-qty="6" data-link="https://pay.sumup.com/b2c/QJZFC5SY" onclick="selectQty(this)">
+                        <span class="qty-num">6</span>
+                        <span class="qty-price">£90</span>
+                    </div>
+                    <div class="qty-option" data-qty="7" data-link="https://pay.sumup.com/b2c/QMIFW9ZG" onclick="selectQty(this)">
+                        <span class="qty-num">7</span>
+                        <span class="qty-price">£105</span>
+                    </div>
+                    <div class="qty-option" data-qty="8" data-link="https://pay.sumup.com/b2c/QOAAM37B" onclick="selectQty(this)">
+                        <span class="qty-num">8</span>
+                        <span class="qty-price">£120</span>
+                    </div>
+                    <div class="qty-option" data-qty="9" data-link="https://pay.sumup.com/b2c/QH2KVFVF" onclick="selectQty(this)">
+                        <span class="qty-num">9</span>
+                        <span class="qty-price">£135</span>
+                    </div>
+                    <div class="qty-option" data-qty="10" data-link="https://pay.sumup.com/b2c/Q4IGNI60" onclick="selectQty(this)">
+                        <span class="qty-num">10</span>
+                        <span class="qty-price">£150</span>
                     </div>
                 </div>
 
@@ -1160,8 +1185,8 @@
                     <i class="fas fa-lock me-2"></i> Continue to Secure Payment
                 </button>
 
-                <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%27d%20like%20to%20purchase%205%20or%20more%20tickets%20for%20the%20festival." target="_blank" rel="noopener" class="more-tickets-link">
-                    <i class="fab fa-whatsapp me-1"></i> Need 5 or more tickets? Contact us on WhatsApp
+                <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%27d%20like%20to%20purchase%20more%20than%2010%20tickets%20for%20the%20festival." target="_blank" rel="noopener" class="more-tickets-link">
+                    <i class="fab fa-whatsapp me-1"></i> Need more than 10 tickets? Contact us on WhatsApp
                 </a>
 
                 <p class="privacy-note">🔒 Your details are submitted securely. You'll then be redirected to SumUp to complete payment. Your ticket reference will be emailed to you within 24 hours of payment.</p>
