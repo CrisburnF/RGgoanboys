@@ -2,19 +2,6 @@
 
 <html lang="en">
 <head>
-    <!-- Temporary festival redirect: sends bare-domain visitors to /festival.
-         Skips when ?home=1 is present (e.g. clicking the GRB logo or "Back to all events").
-         To disable after 8 Aug 2026, remove this whole script block. -->
-    <script>
-      (function () {
-        try {
-          var params = new URLSearchParams(window.location.search);
-          if (!params.has('home')) {
-            window.location.replace('festival/');
-          }
-        } catch (e) { /* if anything fails, just stay on the homepage */ }
-      })();
-    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DKE5NXZ19"></script>
     <script>
@@ -228,7 +215,7 @@
     <p>Goan Reading Boys</p>
 </div>
 
-<a href="festival/" class="festival-bar">🎟️ Goan Food &amp; Cultural Festival · 8 Aug 2026 · <strong>Buy Tickets →</strong></a>
+<a href="festival/" class="festival-bar">🙏 Thank you to everyone who joined us at the Goan Food &amp; Cultural Festival! · <strong>See Highlights →</strong></a>
 
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
@@ -261,7 +248,7 @@
         <h1 class="hero-title">Elevating the <br><span style="color:var(--goan-gold)">Goan Experience</span></h1>
         <p class="lead mb-4 mx-auto fw-light" style="max-width:700px; color:rgba(255,255,255,0.75);">Join the Goan Reading Boys for the most anticipated cultural gatherings in the UK. Unforgettable nights, authentic vibes.</p>
         <div class="d-flex justify-content-center gap-3 flex-wrap mb-2">
-            <a href="festival/" class="btn btn-gold"><i class="fas fa-ticket-alt me-2"></i>Festival 2026 — Get Tickets</a>
+            <a href="festival/" class="btn btn-gold"><i class="fas fa-heart me-2"></i>Festival 2026 — Thank You!</a>
             <a href="#events" class="btn btn-outline-light rounded-pill px-4 fw-bold" style="padding-top:12px; padding-bottom:12px;">View Calendar</a>
         </div>
         <!-- Live countdown on hero -->
@@ -285,7 +272,7 @@
                 </a>
             </div>
             <div class="col-lg-8">
-                <span style="display:inline-block; background:linear-gradient(45deg,#FFD700,#FDB931); color:#000; font-weight:900; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; padding:6px 18px; border-radius:50px; margin-bottom:16px;">⭐ Headline Event 2026</span>
+                <span style="display:inline-block; background:linear-gradient(45deg,#FFD700,#FDB931); color:#000; font-weight:900; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; padding:6px 18px; border-radius:50px; margin-bottom:16px;">✅ Event Complete — Thank You!</span>
                 <h2 style="font-size:clamp(2rem,5vw,3.5rem); font-weight:900; text-transform:uppercase; line-height:1.1; margin-bottom:12px; color:#fff;">Goan Food &<br><span style="color:var(--goan-gold)">Cultural Festival</span></h2>
                 <p style="font-size:clamp(0.95rem,2.2vw,1.15rem); font-weight:800; color:var(--goan-gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">⭐ Reading's First Ever Goan Outdoor Festival</p>
                 <div class="d-flex flex-wrap gap-3 mb-4">
@@ -294,7 +281,7 @@
                     <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:50px; padding:8px 18px; font-size:0.9rem; font-weight:600; color:#fff;"><i class="fas fa-sun" style="color:var(--goan-gold)"></i> Full Day Outdoor Event</span>
                 </div>
                 <p style="opacity:0.75; font-weight:300; font-size:1.05rem; max-width:580px; margin-bottom:28px; color:#fff;">Live bands, DJ sets, authentic Goan street food stalls, cultural performances and family activities. Full lineup now announced!</p>
-                <button onclick="openTicketPurchase()" class="btn btn-gold me-3" style="border:none; cursor:pointer; font-family:'Outfit', sans-serif;"><i class="fas fa-ticket-alt me-2"></i>Buy Tickets — £15</button>
+                
                 <a href="festival/" class="btn btn-outline-light rounded-pill px-4 fw-bold" style="padding-top:12px; padding-bottom:12px;">View Event Details</a>
             </div>
         </div>
@@ -356,7 +343,7 @@
                             </div>
                         </div>
                         <p style="color:var(--text-muted)" class="fw-light mb-3 flex-grow-1">Our biggest event yet. Authentic Goan street food stalls, live bands, DJ sets, cultural performances and activities for the whole family — all under the open sky in Reading. Full band and DJ lineup now announced on the festival page!</p>
-                        <div style="display:inline-block; background:linear-gradient(135deg, #FFD700, #FDB931); color:#000; padding:8px 18px; border-radius:50px; font-weight:800; font-size:0.85rem; margin-bottom:12px; box-shadow:0 4px 12px rgba(255,215,0,0.3);"><i class="fas fa-ticket-alt me-2"></i>Tickets £15 — Buy Now</div>
+                        <div style="display:inline-block; background:linear-gradient(135deg, #FFD700, #FDB931); color:#000; padding:8px 18px; border-radius:50px; font-weight:800; font-size:0.85rem; margin-bottom:12px; box-shadow:0 4px 12px rgba(255,215,0,0.3);"><i class="fas fa-ticket-alt me-2"></i>🙏 Thank you to all who attended!</div>
                         <div class="click-hint"><i class="fas fa-arrow-right"></i> Click for full event details, location & lineup updates</div>
                     </div>
                 </a>
@@ -1124,10 +1111,7 @@
         .more-tickets-link:hover { color: var(--goan-gold); }
         .more-tickets-link i { color: #25D366; }
     </style>
-    <button class="buy-tickets-float" onclick="openTicketPurchase()" aria-label="Buy tickets">
-        <i class="fas fa-ticket-alt"></i>
-        <span>Buy Tickets</span>
-    </button>
+
 
     <!-- TICKET PURCHASE MODAL -->
     <div class="ticket-modal-overlay" id="ticketPurchase" onclick="if(event.target===this)closeTicketPurchase()">
