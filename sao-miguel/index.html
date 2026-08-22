@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DKE5NXZ19"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1DKE5NXZ19');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feast of Sao Miguel | Goan Reading Boys</title>
+    <meta name="description" content="Goan Reading Boys present the Feast of Sao Miguel. Join us in Reading for live bands, DJs, authentic Goan food, and community celebrations.">
+    <meta property="og:title" content="Feast of Sao Miguel 2026 — Reading">
+    <meta property="og:description" content="Live bands, DJs, authentic Goan street food, cultural performances and family activities to celebrate the Feast of Sao Miguel.">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --goan-gold: #FFD700;
+            --deep-navy: #050A18;
+            --accent-blue: #0dcaf0;
+        }
+
+        html { scroll-padding-top: 100px; }
+
+        body {
+            background-color: var(--deep-navy);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(5, 10, 24, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: var(--goan-gold) !important;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--goan-gold);
+            background-color: #fff;
+        }
+
+        /* Hero */
+        .event-hero {
+            min-height: 70vh;
+            background: linear-gradient(to bottom, rgba(5, 10, 24, 0.55) 0%, rgba(5, 10, 24, 0.7) 40%, rgba(5, 10, 24, 0.95) 85%, var(--deep-navy) 100%),
+                        url('../images/festival-bg.png') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 80px;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FDB931);
+            color: #000;
+            font-weight: 900;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .event-title {
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+
+        .info-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 6px 6px 6px 0;
+        }
+
+        .info-pill i { color: var(--goan-gold); }
+
+        /* Section cards */
+        .detail-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 35px;
+            height: 100%;
+            transition: border-color 0.3s;
+        }
+
+        .detail-card:hover {
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        .detail-card h4 {
+            color: var(--goan-gold);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-card .icon-lg {
+            font-size: 2rem;
+            color: var(--goan-gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Countdown */
+        .countdown-wrap {
+            background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.05));
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .countdown-unit {
+            padding: 0 20px;
+        }
+
+        .countdown-number {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: var(--goan-gold);
+            line-height: 1;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            font-weight: 700;
+        }
+
+        .countdown-divider {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--goan-gold);
+            opacity: 0.4;
+            align-self: flex-start;
+            padding-top: 5px;
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background: linear-gradient(45deg, #FFD700, #FDB931);
+            color: #000 !important;
+            font-weight: 800;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-gold {
+            border: 2px solid var(--goan-gold);
+            color: var(--goan-gold) !important;
+            font-weight: 800;
+            padding: 12px 35px;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            background: transparent;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--goan-gold);
+            color: #000 !important;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .back-link:hover { color: var(--goan-gold); }
+
+        footer {
+            background: #020305;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--goan-gold);
+            background-color: #fff;
+            margin-bottom: 15px;
+        }
+
+        /* Loading screen */
+        #loader {
+            position: fixed; inset: 0;
+            background: var(--deep-navy);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        #loader img {
+            width: 200px; height: 200px; object-fit: contain;
+            border-radius: 50%;
+            animation: loaderPulse 1.5s ease-in-out infinite;
+        }
+        #loader p {
+            color: var(--goan-gold); font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            font-size: 0.8rem; margin-top: 22px;
+        }
+        @keyframes loaderPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.5); transform: scale(1); }
+            50% { box-shadow: 0 0 0 22px rgba(255,215,0,0); transform: scale(1.04); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <img src="../images/rgb-logo.png" alt="Goan Reading Boys">
+        <p>Feast of Sao Miguel</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html?home=1">
+                <img src="../images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
+                <div>GOAN<span class="text-white">READING BOYS</span></div>
+            </a>
+            <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn btn-gold ms-auto" style="padding: 10px 25px; font-size: 0.8rem;"><i class="fab fa-instagram me-1"></i> Follow Us</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="event-hero">
+        <div class="container" data-aos="fade-up">
+            <a href="../index.html?home=1" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
+            <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
+                <!-- Add your specific Sao Miguel logo here if you have one, otherwise using main logo -->
+                <img src="../images/rgb-logo.png" alt="Sao Miguel Logo" style="width:200px; height:200px; aspect-ratio:1/1; object-fit:contain; border-radius:50%; box-shadow:0 0 30px rgba(255,215,0,0.3); flex-shrink:0; background:white;">
+                <span class="event-badge">🎟️ Tickets on Sale Now</span>
+            </div>
+            <h1 class="event-title mb-3">Feast of <br><span style="color:var(--goan-gold)">Sao Miguel</span></h1>
+            <p style="font-size:clamp(1rem,2.5vw,1.2rem); font-weight:800; color:var(--goan-gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">⭐ Join us to celebrate our heritage</p>
+            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A beautiful evening of traditional Goan music, food, and community celebration in the heart of Reading.</p>
+            <div class="d-flex flex-wrap">
+                <span class="info-pill"><i class="fas fa-calendar-alt"></i> Saturday, 10 October 2026</span>
+                <span class="info-pill"><i class="fas fa-clock"></i> 6:00 PM – Late</span>
+                <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Reading, Berkshire</span>
+            </div>
+            <div class="mt-4">
+                <button onclick="openTicketPurchase()" class="btn-gold" style="padding:14px 32px; font-size:1rem; box-shadow:0 8px 24px rgba(255,215,0,0.3);">
+                    <i class="fas fa-ticket-alt me-2"></i> Book Tickets Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- COUNTDOWN -->
+    <section class="py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="countdown-wrap">
+                <p class="text-uppercase fw-bold opacity-50 mb-4" style="letter-spacing: 2px; font-size: 0.8rem;">🎉 The Countdown Is On</p>
+                <div class="d-flex justify-content-center align-items-start flex-wrap">
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-days">--</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-divider d-none d-md-block">:</div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-hours">--</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-divider d-none d-md-block">:</div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-minutes">--</span>
+                        <span class="countdown-label">Mins</span>
+                    </div>
+                    <div class="countdown-divider d-none d-sm-block">:</div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="cd-seconds">--</span>
+                        <span class="countdown-label">Secs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINEUP (Placeholder to swap images later) -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-4" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Live Entertainment</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Bands & DJs</h2>
+                <p style="color:var(--text-muted); margin-top:12px;">Get ready for an incredible night of live music.</p>
+            </div>
+            <div class="row g-4 justify-content-center mb-5">
+                <!-- Band Placeholder 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="detail-card p-0" style="overflow:hidden;">
+                        <div style="position:relative; overflow:hidden; background: rgba(255,255,255,0.05); height: 250px; display:flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-guitar" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
+                        </div>
+                        <div style="padding:24px; text-align:center;">
+                            <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Headline Band</h3>
+                            <p class="opacity-60 small text-uppercase mb-0" style="letter-spacing:1.5px;">⚡ Live Band (TBA)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- DJ Placeholder 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="detail-card p-0" style="overflow:hidden;">
+                        <div style="position:relative; overflow:hidden; background: rgba(255,255,255,0.05); height: 250px; display:flex; align-items:center; justify-content:center;">
+                             <i class="fas fa-headphones" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
+                        </div>
+                        <div style="padding:24px; text-align:center;">
+                            <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Guest DJ</h3>
+                            <p class="opacity-60 small text-uppercase mb-0" style="letter-spacing:1.5px;">🎧 On the Decks (TBA)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-5" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">What's On</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">What to Expect</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-utensils icon-lg"></i>
+                        <h4>Goan Cuisine</h4>
+                        <p class="opacity-75 fw-light">Authentic, mouth-watering Goan dishes served hot throughout the evening by our trusted vendors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-glass-cheers icon-lg"></i>
+                        <h4>Community Celebration</h4>
+                        <p class="opacity-75 fw-light">A welcoming atmosphere for all ages. Come together to celebrate St. Michael's feast with family and friends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & PARKING -->
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-5" data-aos="fade-right">
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Location</h2>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-map-marker-alt icon-lg"></i>
+                        <h4>Venue To Be Announced</h4>
+                        <h5 class="fw-bold mb-2" style="color:#fff;">Reading, Berkshire</h5>
+                        <p class="opacity-75 fw-light mb-3">Full venue and parking details will be revealed closer to the event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAY UPDATED CTA -->
+    <section class="py-5 my-3">
+        <div class="container" data-aos="zoom-in">
+            <div class="text-center p-5 rounded-4" style="background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.04)); border: 1px solid rgba(255,215,0,0.2);">
+                <i class="fab fa-instagram mb-3" style="font-size: 2.5rem; color: var(--goan-gold);"></i>
+                <h3 class="fw-bold mb-2">Stay in the Loop</h3>
+                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px;">Follow us on Instagram for lineup announcements and behind-the-scenes updates for the Feast of Sao Miguel.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn-outline-gold">
+                        <i class="fab fa-instagram me-2"></i> Follow on Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="../images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
+            <h5 class="fw-bold mb-1">GOAN<span style="color:var(--goan-gold)">READING BOYS</span></h5>
+            <p class="opacity-50 fw-light small mb-4">Bringing the Soul of Goa to the Heart of Berkshire.</p>
+            <p class="opacity-50 small">&copy; 2026 GOAN READING BOYS LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const l = document.getElementById('loader');
+                if (l) l.classList.add('hidden');
+            }, 700);
+        });
+
+        // Countdown to Sao Miguel
+        function updateCountdown() {
+            const eventDate = new Date('2026-10-10T18:00:00'); // Set to 10th October 2026
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-minutes').textContent = '0';
+                document.getElementById('cd-seconds').textContent = '0';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+    <!-- WhatsApp Chat Widget Styles -->
+    <style>
+        .wa-widget-button {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; border: none;
+            border-radius: 50px; padding: 14px 22px; display: flex; align-items: center; gap: 10px;
+            font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); z-index: 9998; transition: all 0.3s ease;
+            animation: wa-pulse 2s ease-in-out infinite;
+        }
+        .wa-widget-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6); }
+        .wa-widget-button i { font-size: 1.5rem; }
+        @keyframes wa-pulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 12px rgba(37, 211, 102, 0); }
+        }
+        .wa-chat-popup {
+            position: fixed; bottom: 95px; right: 25px; width: 340px; max-width: calc(100vw - 40px);
+            background: #ECE5DD; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            z-index: 9999; overflow: hidden; font-family: 'Outfit', sans-serif; opacity: 0;
+            visibility: hidden; transform: translateY(20px) scale(0.95); transition: all 0.3s ease;
+        }
+        .wa-chat-popup.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .wa-chat-header { background: #075E54; color: #fff; padding: 16px 18px; display: flex; align-items: center; gap: 12px; position: relative; }
+        .wa-chat-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.3); background: #fff; }
+        .wa-chat-header-info { flex: 1; }
+        .wa-chat-header-info h4 { margin: 0; font-size: 1rem; font-weight: 700; }
+        .wa-chat-header-info p { margin: 0; font-size: 0.78rem; opacity: 0.85; display: flex; align-items: center; gap: 6px; }
+        .wa-online-dot { width: 8px; height: 8px; background: #25D366; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 2px rgba(37,211,102,0.3); }
+        .wa-chat-close { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; opacity: 0.7; padding: 4px 8px; line-height: 1; transition: opacity 0.2s; }
+        .wa-chat-close:hover { opacity: 1; }
+        .wa-chat-body { padding: 20px 16px; min-height: 140px; background-color: #E5DDD5; }
+        .wa-msg-bubble {
+            background: #fff; border-radius: 12px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.9rem;
+            line-height: 1.4; color: #303030; box-shadow: 0 1px 1px rgba(0,0,0,0.1); max-width: 85%; position: relative;
+        }
+        .wa-msg-bubble::before {
+            content: ''; position: absolute; top: 0; left: -8px; width: 0; height: 0; border-style: solid;
+            border-width: 0 8px 8px 0; border-color: transparent #fff transparent transparent;
+        }
+        .wa-msg-time { font-size: 0.7rem; color: #999; float: right; margin-left: 8px; margin-top: 4px; }
+        .wa-chat-footer { background: #f0f0f0; padding: 14px 16px; border-top: 1px solid rgba(0,0,0,0.06); }
+        .wa-start-chat-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; text-decoration: none;
+            padding: 12px 16px; border-radius: 24px; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer;
+        }
+        @media (max-width: 576px) {
+            .wa-widget-button { bottom: 16px; right: 16px; padding: 12px 18px; font-size: 0.85rem; }
+            .wa-chat-popup { bottom: 80px; right: 16px; left: 16px; width: auto; }
+        }
+    </style>
+
+    <!-- Chat Popup -->
+    <div class="wa-chat-popup" id="waChatPopup">
+        <div class="wa-chat-header">
+            <img src="../images/rgb-logo.png" alt="GRB" class="wa-chat-avatar">
+            <div class="wa-chat-header-info">
+                <h4>Goan Reading Boys</h4>
+                <p><span class="wa-online-dot"></span> Typically replies within an hour</p>
+            </div>
+            <button class="wa-chat-close" onclick="closeWaChat()">×</button>
+        </div>
+        <div class="wa-chat-body">
+            <div class="wa-msg-bubble">
+                👋 Hi there! Excited for the Feast of Sao Miguel?
+                <span class="wa-msg-time">now</span>
+            </div>
+            <div class="wa-msg-bubble">
+                If you have any questions about tickets, stalls, or the event, just drop us a message below!
+                <span class="wa-msg-time">now</span>
+            </div>
+        </div>
+        <div class="wa-chat-footer">
+            <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%20have%20a%20question%20about%20the%20Feast%20of%20Sao%20Miguel." target="_blank" rel="noopener" class="wa-start-chat-btn">
+                <i class="fab fa-whatsapp"></i> Start Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <button class="wa-widget-button" onclick="toggleWaChat()">
+        <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
+    </button>
+
+    <!-- Floating Buy Tickets Button -->
+    <style>
+        .buy-tickets-float {
+            position: fixed; bottom: 25px; left: 25px; background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #000; border: none; border-radius: 50px; padding: 14px 22px; display: flex; align-items: center;
+            gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.95rem; cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45); z-index: 9998; transition: all 0.3s ease;
+            animation: bt-pulse 2.5s ease-in-out infinite;
+        }
+        .buy-tickets-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6); }
+        @keyframes bt-pulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45), 0 0 0 0 rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45), 0 0 0 14px rgba(255, 215, 0, 0); }
+        }
+        @media (max-width: 576px) { .buy-tickets-float { bottom: 16px; left: 16px; padding: 12px 18px; font-size: 0.85rem; } }
+    </style>
+    <button class="buy-tickets-float" onclick="openTicketPurchase()">
+        <i class="fas fa-ticket-alt"></i> Buy Tickets
+    </button>
+
+    <script>
+        function toggleWaChat() { document.getElementById('waChatPopup').classList.toggle('active'); }
+        function closeWaChat() { document.getElementById('waChatPopup').classList.remove('active'); }
+        document.addEventListener('click', function(e) {
+            const popup = document.getElementById('waChatPopup');
+            const btn = document.querySelector('.wa-widget-button');
+            if (popup && btn && popup.classList.contains('active') && !popup.contains(e.target) && !btn.contains(e.target)) {
+                popup.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- TICKET PURCHASE MODAL -->
+    <style>
+        .ticket-modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px;
+            opacity: 0; transition: opacity 0.3s ease; overflow-y: auto;
+        }
+        .ticket-modal-overlay.active { display: flex; opacity: 1; }
+        .ticket-modal {
+            background: linear-gradient(135deg, #0a1428 0%, #0d1f3d 100%); border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 24px; max-width: 480px; width: 100%; padding: 36px 28px; position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(255,215,0,0.15); transform: scale(0.95) translateY(20px);
+            transition: transform 0.4s ease; margin: auto;
+        }
+        .ticket-modal-overlay.active .ticket-modal { transform: scale(1) translateY(0); }
+        .ticket-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.05); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .ticket-modal-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #FFD700, #FDB931); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.7rem; color: #000; box-shadow: 0 8px 24px rgba(255,215,0,0.4); }
+        .ticket-modal h3 { text-align: center; font-weight: 900; color: #fff; margin-bottom: 6px; font-size: 1.4rem; }
+        .ticket-modal .subtitle { text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 22px; font-size: 0.9rem; }
+        .ticket-modal .form-label { color: rgba(255,255,255,0.85); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; display: block; }
+        .ticket-modal .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px 16px; border-radius: 12px; margin-bottom: 14px; width: 100%; font-family: 'Outfit', sans-serif; }
+        .ticket-modal .submit-btn { width: 100%; background: linear-gradient(135deg, #FFD700, #FDB931); color: #000; border: none; padding: 14px; border-radius: 12px; font-weight: 800; cursor: pointer; margin-top: 6px; }
+        .qty-selector { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 14px; }
+        .qty-option { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 14px 8px; border-radius: 12px; cursor: pointer; text-align: center; }
+        .qty-option.selected { background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(253,185,49,0.15)); border-color: var(--goan-gold); }
+        .qty-option .qty-num { display: block; font-weight: 800; font-size: 1.3rem; color: var(--goan-gold); line-height: 1; }
+        .qty-option .qty-price { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+        .total-box { background: rgba(255,215,0,0.08); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    </style>
+
+    <div class="ticket-modal-overlay" id="ticketPurchase" onclick="if(event.target===this)closeTicketPurchase()">
+        <div class="ticket-modal">
+            <button class="ticket-modal-close" onclick="closeTicketPurchase()">×</button>
+            <div class="ticket-modal-icon"><i class="fas fa-ticket-alt"></i></div>
+            <h3>Get Your Tickets</h3>
+            <p class="subtitle">Feast of Sao Miguel 2026 — £15 per ticket</p>
+            
+            <form id="ticketPurchaseForm" onsubmit="return handlePurchase(event)">
+                <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; height:0; width:0; opacity:0;">
+                <label class="form-label">How many tickets?</label>
+                <div class="qty-selector">
+                    <!-- Note: Ensure you update these data-link properties with the correct SumUp links for this specific event! -->
+                    <div class="qty-option selected" data-qty="1" data-link="YOUR_SUMUP_LINK_FOR_1" onclick="selectQty(this)">
+                        <span class="qty-num">1</span><span class="qty-price">£15</span>
+                    </div>
+                    <div class="qty-option" data-qty="2" data-link="YOUR_SUMUP_LINK_FOR_2" onclick="selectQty(this)">
+                        <span class="qty-num">2</span><span class="qty-price">£30</span>
+                    </div>
+                    <div class="qty-option" data-qty="3" data-link="YOUR_SUMUP_LINK_FOR_3" onclick="selectQty(this)">
+                        <span class="qty-num">3</span><span class="qty-price">£45</span>
+                    </div>
+                    <div class="qty-option" data-qty="4" data-link="YOUR_SUMUP_LINK_FOR_4" onclick="selectQty(this)">
+                        <span class="qty-num">4</span><span class="qty-price">£60</span>
+                    </div>
+                    <div class="qty-option" data-qty="5" data-link="YOUR_SUMUP_LINK_FOR_5" onclick="selectQty(this)">
+                        <span class="qty-num">5</span><span class="qty-price">£75</span>
+                    </div>
+                </div>
+
+                <label class="form-label" for="tpName">Full Name</label>
+                <input type="text" id="tpName" name="name" class="form-control" required>
+
+                <label class="form-label" for="tpEmail">Email Address</label>
+                <input type="email" id="tpEmail" name="email" class="form-control" required>
+
+                <label class="form-label" for="tpPhone">Phone Number</label>
+                <input type="tel" id="tpPhone" name="phone" class="form-control" required>
+
+                <div class="total-box">
+                    <span class="label">Order Total</span>
+                    <span class="amount" id="orderTotal">£15.00</span>
+                </div>
+
+                <input type="hidden" name="quantity" id="tpQuantity" value="1">
+                <input type="hidden" name="total" id="tpTotal" value="£15.00">
+                <input type="hidden" name="_subject" value="🎟️ Sao Miguel Ticket Purchase">
+                <input type="hidden" name="form_type" value="Sao Miguel Ticket Purchase">
+
+                <button type="submit" class="submit-btn" id="tpSubmitBtn">
+                    <i class="fas fa-lock me-2"></i> Continue to Secure Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openTicketPurchase() { document.getElementById('ticketPurchase').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeTicketPurchase() { document.getElementById('ticketPurchase').classList.remove('active'); document.body.style.overflow = ''; }
+        function selectQty(el) {
+            document.querySelectorAll('.qty-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            const qty = el.dataset.qty;
+            const total = (parseInt(qty) * 15).toFixed(2);
+            document.getElementById('orderTotal').textContent = '£' + total;
+            document.getElementById('tpQuantity').value = qty;
+            document.getElementById('tpTotal').value = '£' + total;
+        }
+
+        const GRB_FORMS_URL = 'https://script.google.com/macros/s/AKfycbz_qi-FtQa9BNTVFOEOhbX6LITQwDhONq5HYtL7wptAUVuIKzBMJBuWyNGrAa1hXyNI/exec';
+
+        async function handlePurchase(e) {
+            e.preventDefault();
+            const btn = document.getElementById('tpSubmitBtn');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Processing...';
+
+            const selectedOption = document.querySelector('.qty-option.selected');
+            const sumupLink = selectedOption.dataset.link;
+            
+            if (sumupLink.includes("YOUR_SUMUP_LINK")) {
+                alert("Please update the SumUp payment links in the HTML code before testing!");
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                return false;
+            }
+
+            try {
+                const form = document.getElementById('ticketPurchaseForm');
+                const params = new URLSearchParams(new FormData(form));
+                await fetch(GRB_FORMS_URL, { method: 'POST', mode: 'no-cors', body: params });
+                btn.innerHTML = '<i class="fas fa-check me-2"></i> Redirecting to payment...';
+                window.location.href = sumupLink;
+            } catch (err) {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                alert('Could not connect. Please check your internet and try again.');
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
