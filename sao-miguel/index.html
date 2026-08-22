@@ -12,9 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feast of Sao Miguel | Goan Reading Boys</title>
-    <meta name="description" content="Goan Reading Boys present the Feast of Sao Miguel. Join us in Reading for live bands, DJs, authentic Goan food, and community celebrations.">
+    <meta name="description" content="Goan Reading Boys present the Feast of Sao Miguel. Join us in Reading for the Holy Mass, traditional procession, and community feast gathering.">
     <meta property="og:title" content="Feast of Sao Miguel 2026 — Reading">
-    <meta property="og:description" content="Live bands, DJs, authentic Goan street food, cultural performances and family activities to celebrate the Feast of Sao Miguel.">
+    <meta property="og:description" content="A celebration of faith and heritage. Join us for the Holy Mass, traditional procession, and authentic Goan feast gathering.">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -71,7 +71,6 @@
         /* Hero */
         .event-hero {
             min-height: 70vh;
-            /* Using the blank theme for the background */
             background: linear-gradient(to bottom, rgba(61, 0, 0, 0.4) 0%, rgba(61, 0, 0, 0.7) 50%, rgba(31, 0, 0, 0.95) 90%, var(--darker-red) 100%),
                         url('../images/Theme_blank.jpg') center/cover;
             display: flex;
@@ -280,9 +279,10 @@
         }
         #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         #loader img {
-            width: 200px; height: 200px; object-fit: contain;
+            width: 200px; height: 200px; object-fit: cover;
             border-radius: 50%;
             animation: loaderPulse 1.5s ease-in-out infinite;
+            border: 2px solid var(--accent-gold);
         }
         #loader p {
             color: var(--goan-gold); font-weight: 700;
@@ -297,8 +297,9 @@
 </head>
 <body>
 
+    <!-- Updated Loader with image_3.png -->
     <div id="loader">
-        <img src="../images/rgb-logo.png" alt="Goan Reading Boys">
+        <img src="../images/image_3.png" alt="Feast of Sao Miguel">
         <p>Feast of Sao Miguel</p>
     </div>
 
@@ -317,13 +318,13 @@
         <div class="container" data-aos="fade-up">
             <a href="../index.html?home=1" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
             <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
-                <!-- Using Theme_saomiguel.jpg as the main centerpiece image -->
-                <img src="../images/Theme_saomiguel.jpg" alt="Feast of Sao Miguel" style="width:200px; height:280px; object-fit:cover; border-radius:12px; border: 2px solid var(--accent-gold); box-shadow:0 10px 40px rgba(0,0,0,0.8); flex-shrink:0;">
+                <!-- Using image_3.png as the main centerpiece image, keeping it circular to match the art -->
+                <img src="../images/image_3.png" alt="Feast of Sao Miguel" style="width:200px; height:200px; object-fit:cover; border-radius:50%; border: 3px solid var(--accent-gold); box-shadow:0 10px 40px rgba(0,0,0,0.8); flex-shrink:0;">
                 <span class="event-badge">🎟️ Tickets on Sale Now</span>
             </div>
             <h1 class="event-title mb-3">Feast of <br><span style="color:var(--goan-gold)">Sao Miguel</span></h1>
-            <p style="font-size:clamp(1rem,2.5vw,1.2rem); font-weight:800; color:var(--goan-gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">⭐ Join us to celebrate our heritage</p>
-            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A beautiful evening of traditional Goan music, food, and community celebration in the heart of Reading.</p>
+            <p style="font-size:clamp(1rem,2.5vw,1.2rem); font-weight:800; color:var(--goan-gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">⭐ Honouring St. Michael the Archangel</p>
+            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A reverent celebration of our patron saint, featuring the Holy Mass, a traditional procession, and a joyful community gathering.</p>
             <div class="d-flex flex-wrap">
                 <span class="info-pill"><i class="fas fa-calendar-alt"></i> Saturday, 10 October 2026</span>
                 <span class="info-pill"><i class="fas fa-clock"></i> 6:00 PM – Late</span>
@@ -331,7 +332,7 @@
             </div>
             <div class="mt-4">
                 <button onclick="openTicketPurchase()" class="btn-gold" style="padding:14px 32px; font-size:1rem; box-shadow:0 8px 24px rgba(255,215,0,0.4);">
-                    <i class="fas fa-ticket-alt me-2"></i> Book Tickets Now
+                    <i class="fas fa-ticket-alt me-2"></i> Book Feast Tickets
                 </button>
             </div>
         </div>
@@ -341,7 +342,7 @@
     <section class="py-5">
         <div class="container" data-aos="fade-up">
             <div class="countdown-wrap">
-                <p class="text-uppercase fw-bold opacity-75 mb-4" style="letter-spacing: 2px; font-size: 0.8rem; color: #fff;">🎉 The Countdown Is On</p>
+                <p class="text-uppercase fw-bold opacity-75 mb-4" style="letter-spacing: 2px; font-size: 0.8rem; color: #fff;">🙏 Awaiting the Feast Day</p>
                 <div class="d-flex justify-content-center align-items-start flex-wrap">
                     <div class="countdown-unit">
                         <span class="countdown-number" id="cd-days">--</span>
@@ -367,65 +368,40 @@
         </div>
     </section>
 
-    <!-- LINEUP (Placeholder to swap images later) -->
+    <!-- PROGRAM / WHAT TO EXPECT -->
     <section class="py-5">
         <div class="container">
             <div class="mb-4" data-aos="fade-right">
-                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Live Entertainment</h6>
-                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Bands & DJs</h2>
-                <p style="color:rgba(255,255,255,0.7); margin-top:12px;">Get ready for an incredible night of live music.</p>
+                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Faith & Fellowship</h6>
+                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Feast Day Program</h2>
+                <p style="color:rgba(255,255,255,0.7); margin-top:12px; max-width: 700px;">Join the Goan Reading Boys community as we come together in prayer and celebration to honor St. Michael. The evening will blend spiritual devotion with our rich cultural heritage.</p>
             </div>
             <div class="row g-4 justify-content-center mb-5">
-                <!-- Band Placeholder 1 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="detail-card p-0" style="overflow:hidden;">
-                        <div style="position:relative; overflow:hidden; background: rgba(0,0,0,0.4); height: 250px; display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(212,175,55,0.2);">
-                            <i class="fas fa-guitar" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
-                        </div>
-                        <div style="padding:24px; text-align:center;">
-                            <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Headline Band</h3>
-                            <p class="opacity-75 small text-uppercase mb-0" style="letter-spacing:1.5px; color:#fff;">⚡ Live Band (TBA)</p>
-                        </div>
+                
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-church icon-lg"></i>
+                        <h4>Holy Mass & Procession</h4>
+                        <p class="opacity-75 fw-light small" style="color:#fff;">The evening begins with the Celebration of the Holy Mass, immediately followed by a traditional procession bearing the statue of Sao Miguel.</p>
                     </div>
                 </div>
-                <!-- DJ Placeholder 1 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="detail-card p-0" style="overflow:hidden;">
-                        <div style="position:relative; overflow:hidden; background: rgba(0,0,0,0.4); height: 250px; display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(212,175,55,0.2);">
-                             <i class="fas fa-headphones" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
-                        </div>
-                        <div style="padding:24px; text-align:center;">
-                            <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Guest DJ</h3>
-                            <p class="opacity-75 small text-uppercase mb-0" style="letter-spacing:1.5px; color:#fff;">🎧 On the Decks (TBA)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- WHAT TO EXPECT -->
-    <section class="py-5">
-        <div class="container">
-            <div class="mb-5" data-aos="fade-right">
-                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">What's On</h6>
-                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">What to Expect</h2>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6" data-aos="fade-up">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="detail-card text-center">
+                        <i class="fas fa-users icon-lg"></i>
+                        <h4>Community Fellowship</h4>
+                        <p class="opacity-75 fw-light small" style="color:#fff;">Following the procession, we invite all families and friends to gather for an evening of warmth, unity, and shared Goan heritage.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="detail-card text-center">
                         <i class="fas fa-utensils icon-lg"></i>
-                        <h4>Goan Cuisine</h4>
-                        <p class="opacity-75 fw-light" style="color:#fff;">Authentic, mouth-watering Goan dishes served hot throughout the evening by our trusted vendors.</p>
+                        <h4>The Feast Meal</h4>
+                        <p class="opacity-75 fw-light small" style="color:#fff;">No feast is complete without traditional Goan cuisine. Enjoy authentic, culturally rich dishes alongside traditional music and melodies.</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="detail-card text-center">
-                        <i class="fas fa-glass-cheers icon-lg"></i>
-                        <h4>Community Celebration</h4>
-                        <p class="opacity-75 fw-light" style="color:#fff;">A welcoming atmosphere for all ages. Come together to celebrate St. Michael's feast with family and friends.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -443,7 +419,7 @@
                         <i class="fas fa-map-marker-alt icon-lg"></i>
                         <h4>Venue To Be Announced</h4>
                         <h5 class="fw-bold mb-2" style="color:#fff;">Reading, Berkshire</h5>
-                        <p class="opacity-75 fw-light mb-3" style="color:#fff;">Full venue and parking details will be revealed closer to the event.</p>
+                        <p class="opacity-75 fw-light mb-3" style="color:#fff;">Full details regarding the church venue, mass timings, and parking arrangements will be shared closer to the Feast Day.</p>
                     </div>
                 </div>
             </div>
@@ -456,7 +432,7 @@
             <div class="text-center p-5 rounded-4" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
                 <i class="fab fa-instagram mb-3" style="font-size: 2.5rem; color: var(--goan-gold);"></i>
                 <h3 class="fw-bold mb-2">Stay in the Loop</h3>
-                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px; color:#fff;">Follow us on Instagram for lineup announcements and behind-the-scenes updates for the Feast of Sao Miguel.</p>
+                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px; color:#fff;">Follow us on Instagram for schedule announcements, venue updates, and more information regarding the Feast of Sao Miguel.</p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
                     <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn-outline-gold">
                         <i class="fab fa-instagram me-2"></i> Follow on Instagram
@@ -581,11 +557,11 @@
         </div>
         <div class="wa-chat-body">
             <div class="wa-msg-bubble">
-                👋 Hi there! Excited for the Feast of Sao Miguel?
+                👋 Hello! Let us know if you have any questions about the Feast of Sao Miguel.
                 <span class="wa-msg-time">now</span>
             </div>
             <div class="wa-msg-bubble">
-                If you have any questions about tickets, stalls, or the event, just drop us a message below!
+                We're happy to help with ticket inquiries, gathering details, or anything else you need.
                 <span class="wa-msg-time">now</span>
             </div>
         </div>
