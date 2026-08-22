@@ -27,23 +27,24 @@
     <style>
         :root {
             --goan-gold: #FFD700;
-            --deep-navy: #050A18;
-            --accent-blue: #0dcaf0;
+            --deep-red: #3d0000;
+            --darker-red: #1f0000;
+            --accent-gold: #d4af37;
         }
 
         html { scroll-padding-top: 100px; }
 
         body {
-            background-color: var(--deep-navy);
+            background-color: var(--darker-red);
             color: #ffffff;
             font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
         }
 
         .navbar {
-            background: rgba(5, 10, 24, 0.95) !important;
+            background: rgba(31, 0, 0, 0.95) !important;
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding: 1rem 0;
         }
 
@@ -70,8 +71,9 @@
         /* Hero */
         .event-hero {
             min-height: 70vh;
-            background: linear-gradient(to bottom, rgba(5, 10, 24, 0.55) 0%, rgba(5, 10, 24, 0.7) 40%, rgba(5, 10, 24, 0.95) 85%, var(--deep-navy) 100%),
-                        url('../images/festival-bg.png') center/cover;
+            /* Using the blank theme for the background */
+            background: linear-gradient(to bottom, rgba(61, 0, 0, 0.4) 0%, rgba(61, 0, 0, 0.7) 50%, rgba(31, 0, 0, 0.95) 90%, var(--darker-red) 100%),
+                        url('../images/Theme_blank.jpg') center/cover;
             display: flex;
             align-items: flex-end;
             padding-bottom: 80px;
@@ -91,6 +93,7 @@
             padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
 
         .event-title {
@@ -98,35 +101,40 @@
             font-weight: 900;
             line-height: 1.05;
             text-transform: uppercase;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
 
         .info-pill {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 50px;
             padding: 10px 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin: 6px 6px 6px 0;
+            backdrop-filter: blur(5px);
         }
 
         .info-pill i { color: var(--goan-gold); }
 
         /* Section cards */
         .detail-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(0,0,0,0.25);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 20px;
             padding: 35px;
             height: 100%;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .detail-card:hover {
-            border-color: rgba(255,215,0,0.3);
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
         .detail-card h4 {
@@ -147,11 +155,12 @@
 
         /* Countdown */
         .countdown-wrap {
-            background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.05));
-            border: 1px solid rgba(255,215,0,0.2);
+            background: linear-gradient(135deg, rgba(61, 0, 0, 0.8), rgba(31, 0, 0, 0.9));
+            border: 2px solid rgba(212, 175, 55, 0.4);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4), inset 0 0 30px rgba(0,0,0,0.5);
         }
 
         .countdown-unit {
@@ -164,14 +173,16 @@
             color: var(--goan-gold);
             line-height: 1;
             display: block;
+            text-shadow: 0 2px 10px rgba(255,215,0,0.2);
         }
 
         .countdown-label {
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            opacity: 0.5;
+            opacity: 0.7;
             font-weight: 700;
+            color: #fff;
         }
 
         .countdown-divider {
@@ -197,10 +208,11 @@
             font-size: 0.9rem;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
 
         .btn-gold:hover {
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
             transform: translateY(-2px);
         }
 
@@ -216,7 +228,7 @@
             font-size: 0.9rem;
             text-decoration: none;
             display: inline-block;
-            background: transparent;
+            background: rgba(0,0,0,0.3);
         }
 
         .btn-outline-gold:hover {
@@ -228,7 +240,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 600;
@@ -241,9 +253,9 @@
         .back-link:hover { color: var(--goan-gold); }
 
         footer {
-            background: #020305;
+            background: #0d0000;
             padding: 50px 0 30px;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-top: 1px solid rgba(255, 215, 0, 0.15);
             text-align: center;
         }
 
@@ -260,7 +272,7 @@
         /* Loading screen */
         #loader {
             position: fixed; inset: 0;
-            background: var(--deep-navy);
+            background: var(--darker-red);
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
             z-index: 99999;
@@ -305,8 +317,8 @@
         <div class="container" data-aos="fade-up">
             <a href="../index.html?home=1" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
             <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
-                <!-- Add your specific Sao Miguel logo here if you have one, otherwise using main logo -->
-                <img src="../images/rgb-logo.png" alt="Sao Miguel Logo" style="width:200px; height:200px; aspect-ratio:1/1; object-fit:contain; border-radius:50%; box-shadow:0 0 30px rgba(255,215,0,0.3); flex-shrink:0; background:white;">
+                <!-- Using Theme_saomiguel.jpg as the main centerpiece image -->
+                <img src="../images/Theme_saomiguel.jpg" alt="Feast of Sao Miguel" style="width:200px; height:280px; object-fit:cover; border-radius:12px; border: 2px solid var(--accent-gold); box-shadow:0 10px 40px rgba(0,0,0,0.8); flex-shrink:0;">
                 <span class="event-badge">🎟️ Tickets on Sale Now</span>
             </div>
             <h1 class="event-title mb-3">Feast of <br><span style="color:var(--goan-gold)">Sao Miguel</span></h1>
@@ -318,7 +330,7 @@
                 <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Reading, Berkshire</span>
             </div>
             <div class="mt-4">
-                <button onclick="openTicketPurchase()" class="btn-gold" style="padding:14px 32px; font-size:1rem; box-shadow:0 8px 24px rgba(255,215,0,0.3);">
+                <button onclick="openTicketPurchase()" class="btn-gold" style="padding:14px 32px; font-size:1rem; box-shadow:0 8px 24px rgba(255,215,0,0.4);">
                     <i class="fas fa-ticket-alt me-2"></i> Book Tickets Now
                 </button>
             </div>
@@ -329,7 +341,7 @@
     <section class="py-5">
         <div class="container" data-aos="fade-up">
             <div class="countdown-wrap">
-                <p class="text-uppercase fw-bold opacity-50 mb-4" style="letter-spacing: 2px; font-size: 0.8rem;">🎉 The Countdown Is On</p>
+                <p class="text-uppercase fw-bold opacity-75 mb-4" style="letter-spacing: 2px; font-size: 0.8rem; color: #fff;">🎉 The Countdown Is On</p>
                 <div class="d-flex justify-content-center align-items-start flex-wrap">
                     <div class="countdown-unit">
                         <span class="countdown-number" id="cd-days">--</span>
@@ -361,30 +373,30 @@
             <div class="mb-4" data-aos="fade-right">
                 <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Live Entertainment</h6>
                 <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Bands & DJs</h2>
-                <p style="color:var(--text-muted); margin-top:12px;">Get ready for an incredible night of live music.</p>
+                <p style="color:rgba(255,255,255,0.7); margin-top:12px;">Get ready for an incredible night of live music.</p>
             </div>
             <div class="row g-4 justify-content-center mb-5">
                 <!-- Band Placeholder 1 -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="detail-card p-0" style="overflow:hidden;">
-                        <div style="position:relative; overflow:hidden; background: rgba(255,255,255,0.05); height: 250px; display:flex; align-items:center; justify-content:center;">
+                        <div style="position:relative; overflow:hidden; background: rgba(0,0,0,0.4); height: 250px; display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(212,175,55,0.2);">
                             <i class="fas fa-guitar" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
                         </div>
                         <div style="padding:24px; text-align:center;">
                             <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Headline Band</h3>
-                            <p class="opacity-60 small text-uppercase mb-0" style="letter-spacing:1.5px;">⚡ Live Band (TBA)</p>
+                            <p class="opacity-75 small text-uppercase mb-0" style="letter-spacing:1.5px; color:#fff;">⚡ Live Band (TBA)</p>
                         </div>
                     </div>
                 </div>
                 <!-- DJ Placeholder 1 -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="detail-card p-0" style="overflow:hidden;">
-                        <div style="position:relative; overflow:hidden; background: rgba(255,255,255,0.05); height: 250px; display:flex; align-items:center; justify-content:center;">
+                        <div style="position:relative; overflow:hidden; background: rgba(0,0,0,0.4); height: 250px; display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(212,175,55,0.2);">
                              <i class="fas fa-headphones" style="font-size:4rem; color:var(--goan-gold); opacity:0.5;"></i>
                         </div>
                         <div style="padding:24px; text-align:center;">
                             <h3 class="fw-bold mb-1" style="color:var(--goan-gold);">Guest DJ</h3>
-                            <p class="opacity-60 small text-uppercase mb-0" style="letter-spacing:1.5px;">🎧 On the Decks (TBA)</p>
+                            <p class="opacity-75 small text-uppercase mb-0" style="letter-spacing:1.5px; color:#fff;">🎧 On the Decks (TBA)</p>
                         </div>
                     </div>
                 </div>
@@ -404,14 +416,14 @@
                     <div class="detail-card text-center">
                         <i class="fas fa-utensils icon-lg"></i>
                         <h4>Goan Cuisine</h4>
-                        <p class="opacity-75 fw-light">Authentic, mouth-watering Goan dishes served hot throughout the evening by our trusted vendors.</p>
+                        <p class="opacity-75 fw-light" style="color:#fff;">Authentic, mouth-watering Goan dishes served hot throughout the evening by our trusted vendors.</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="detail-card text-center">
                         <i class="fas fa-glass-cheers icon-lg"></i>
                         <h4>Community Celebration</h4>
-                        <p class="opacity-75 fw-light">A welcoming atmosphere for all ages. Come together to celebrate St. Michael's feast with family and friends.</p>
+                        <p class="opacity-75 fw-light" style="color:#fff;">A welcoming atmosphere for all ages. Come together to celebrate St. Michael's feast with family and friends.</p>
                     </div>
                 </div>
             </div>
@@ -431,7 +443,7 @@
                         <i class="fas fa-map-marker-alt icon-lg"></i>
                         <h4>Venue To Be Announced</h4>
                         <h5 class="fw-bold mb-2" style="color:#fff;">Reading, Berkshire</h5>
-                        <p class="opacity-75 fw-light mb-3">Full venue and parking details will be revealed closer to the event.</p>
+                        <p class="opacity-75 fw-light mb-3" style="color:#fff;">Full venue and parking details will be revealed closer to the event.</p>
                     </div>
                 </div>
             </div>
@@ -441,10 +453,10 @@
     <!-- STAY UPDATED CTA -->
     <section class="py-5 my-3">
         <div class="container" data-aos="zoom-in">
-            <div class="text-center p-5 rounded-4" style="background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(13,202,240,0.04)); border: 1px solid rgba(255,215,0,0.2);">
+            <div class="text-center p-5 rounded-4" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
                 <i class="fab fa-instagram mb-3" style="font-size: 2.5rem; color: var(--goan-gold);"></i>
                 <h3 class="fw-bold mb-2">Stay in the Loop</h3>
-                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px;">Follow us on Instagram for lineup announcements and behind-the-scenes updates for the Feast of Sao Miguel.</p>
+                <p class="opacity-75 fw-light mb-4 mx-auto" style="max-width: 500px; color:#fff;">Follow us on Instagram for lineup announcements and behind-the-scenes updates for the Feast of Sao Miguel.</p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
                     <a href="https://www.instagram.com/goanreadingboys/" target="_blank" rel="noopener" class="btn-outline-gold">
                         <i class="fab fa-instagram me-2"></i> Follow on Instagram
@@ -458,8 +470,8 @@
         <div class="container">
             <img src="../images/rgb-logo.png" alt="RGB Logo" class="footer-logo">
             <h5 class="fw-bold mb-1">GOAN<span style="color:var(--goan-gold)">READING BOYS</span></h5>
-            <p class="opacity-50 fw-light small mb-4">Bringing the Soul of Goa to the Heart of Berkshire.</p>
-            <p class="opacity-50 small">&copy; 2026 GOAN READING BOYS LTD. All Rights Reserved.</p>
+            <p class="opacity-50 fw-light small mb-4" style="color:#fff;">Bringing the Soul of Goa to the Heart of Berkshire.</p>
+            <p class="opacity-50 small" style="color:#fff;">&copy; 2026 GOAN READING BOYS LTD. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -522,7 +534,7 @@
         }
         .wa-chat-popup {
             position: fixed; bottom: 95px; right: 25px; width: 340px; max-width: calc(100vw - 40px);
-            background: #ECE5DD; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            background: #ECE5DD; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
             z-index: 9999; overflow: hidden; font-family: 'Outfit', sans-serif; opacity: 0;
             visibility: hidden; transform: translateY(20px) scale(0.95); transition: all 0.3s ease;
         }
@@ -630,25 +642,28 @@
         }
         .ticket-modal-overlay.active { display: flex; opacity: 1; }
         .ticket-modal {
-            background: linear-gradient(135deg, #0a1428 0%, #0d1f3d 100%); border: 1px solid rgba(255,215,0,0.3);
+            background: linear-gradient(135deg, #3d0000 0%, #1f0000 100%); border: 1px solid rgba(212,175,55,0.4);
             border-radius: 24px; max-width: 480px; width: 100%; padding: 36px 28px; position: relative;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(255,215,0,0.15); transform: scale(0.95) translateY(20px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(212,175,55,0.15); transform: scale(0.95) translateY(20px);
             transition: transform 0.4s ease; margin: auto;
         }
         .ticket-modal-overlay.active .ticket-modal { transform: scale(1) translateY(0); }
-        .ticket-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.05); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .ticket-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.1); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+        .ticket-modal-close:hover { background: rgba(255,255,255,0.2); }
         .ticket-modal-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #FFD700, #FDB931); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.7rem; color: #000; box-shadow: 0 8px 24px rgba(255,215,0,0.4); }
         .ticket-modal h3 { text-align: center; font-weight: 900; color: #fff; margin-bottom: 6px; font-size: 1.4rem; }
         .ticket-modal .subtitle { text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 22px; font-size: 0.9rem; }
         .ticket-modal .form-label { color: rgba(255,255,255,0.85); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; display: block; }
-        .ticket-modal .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px 16px; border-radius: 12px; margin-bottom: 14px; width: 100%; font-family: 'Outfit', sans-serif; }
-        .ticket-modal .submit-btn { width: 100%; background: linear-gradient(135deg, #FFD700, #FDB931); color: #000; border: none; padding: 14px; border-radius: 12px; font-weight: 800; cursor: pointer; margin-top: 6px; }
+        .ticket-modal .form-control { background: rgba(0,0,0,0.2); border: 1px solid rgba(212,175,55,0.3); color: #fff; padding: 12px 16px; border-radius: 12px; margin-bottom: 14px; width: 100%; font-family: 'Outfit', sans-serif; }
+        .ticket-modal .form-control:focus { outline: none; border-color: var(--goan-gold); }
+        .ticket-modal .submit-btn { width: 100%; background: linear-gradient(135deg, #FFD700, #FDB931); color: #000; border: none; padding: 14px; border-radius: 12px; font-weight: 800; cursor: pointer; margin-top: 6px; box-shadow: 0 4px 15px rgba(255,215,0,0.3); transition: transform 0.2s; }
+        .ticket-modal .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,0.5); }
         .qty-selector { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 14px; }
-        .qty-option { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 14px 8px; border-radius: 12px; cursor: pointer; text-align: center; }
-        .qty-option.selected { background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(253,185,49,0.15)); border-color: var(--goan-gold); }
+        .qty-option { background: rgba(0,0,0,0.2); border: 1px solid rgba(212,175,55,0.2); color: #fff; padding: 14px 8px; border-radius: 12px; cursor: pointer; text-align: center; transition: all 0.2s; }
+        .qty-option.selected { background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(253,185,49,0.2)); border-color: var(--goan-gold); box-shadow: 0 4px 12px rgba(255,215,0,0.2); }
         .qty-option .qty-num { display: block; font-weight: 800; font-size: 1.3rem; color: var(--goan-gold); line-height: 1; }
-        .qty-option .qty-price { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
-        .total-box { background: rgba(255,215,0,0.08); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .qty-option .qty-price { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .total-box { background: rgba(255,215,0,0.1); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     </style>
 
     <div class="ticket-modal-overlay" id="ticketPurchase" onclick="if(event.target===this)closeTicketPurchase()">
@@ -690,7 +705,7 @@
                 <input type="tel" id="tpPhone" name="phone" class="form-control" required>
 
                 <div class="total-box">
-                    <span class="label">Order Total</span>
+                    <span class="label" style="color:#fff;">Order Total</span>
                     <span class="amount" id="orderTotal">£15.00</span>
                 </div>
 
