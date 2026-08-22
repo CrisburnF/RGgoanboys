@@ -676,35 +676,34 @@
                 <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; height:0; width:0; opacity:0;">
                 <label class="form-label">How many tickets?</label>
                 <div class="qty-selector">
-                    <!-- ⚠️ Update every data-link below with the correct SumUp payment link for this event before going live! -->
-                    <div class="qty-option selected" data-qty="1" data-link="YOUR_SUMUP_LINK_FOR_1" onclick="selectQty(this)">
+                    <div class="qty-option selected" data-qty="1" data-link="https://pay.sumup.com/b2c/QXDBBM7A" onclick="selectQty(this)">
                         <span class="qty-num">1</span><span class="qty-price">£15</span>
                     </div>
-                    <div class="qty-option" data-qty="2" data-link="YOUR_SUMUP_LINK_FOR_2" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="2" data-link="https://pay.sumup.com/b2c/QE4L6XZB" onclick="selectQty(this)">
                         <span class="qty-num">2</span><span class="qty-price">£30</span>
                     </div>
-                    <div class="qty-option" data-qty="3" data-link="YOUR_SUMUP_LINK_FOR_3" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="3" data-link="https://pay.sumup.com/b2c/Q8UD7SET" onclick="selectQty(this)">
                         <span class="qty-num">3</span><span class="qty-price">£45</span>
                     </div>
-                    <div class="qty-option" data-qty="4" data-link="YOUR_SUMUP_LINK_FOR_4" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="4" data-link="https://pay.sumup.com/b2c/QNT6JIMP" onclick="selectQty(this)">
                         <span class="qty-num">4</span><span class="qty-price">£60</span>
                     </div>
-                    <div class="qty-option" data-qty="5" data-link="YOUR_SUMUP_LINK_FOR_5" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="5" data-link="https://pay.sumup.com/b2c/QUQJOK7I" onclick="selectQty(this)">
                         <span class="qty-num">5</span><span class="qty-price">£75</span>
                     </div>
-                    <div class="qty-option" data-qty="6" data-link="YOUR_SUMUP_LINK_FOR_6" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="6" data-link="https://pay.sumup.com/b2c/QJZFC5SY" onclick="selectQty(this)">
                         <span class="qty-num">6</span><span class="qty-price">£90</span>
                     </div>
-                    <div class="qty-option" data-qty="7" data-link="YOUR_SUMUP_LINK_FOR_7" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="7" data-link="https://pay.sumup.com/b2c/QMIFW9ZG" onclick="selectQty(this)">
                         <span class="qty-num">7</span><span class="qty-price">£105</span>
                     </div>
-                    <div class="qty-option" data-qty="8" data-link="YOUR_SUMUP_LINK_FOR_8" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="8" data-link="https://pay.sumup.com/b2c/QOAAM37B" onclick="selectQty(this)">
                         <span class="qty-num">8</span><span class="qty-price">£120</span>
                     </div>
-                    <div class="qty-option" data-qty="9" data-link="YOUR_SUMUP_LINK_FOR_9" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="9" data-link="https://pay.sumup.com/b2c/QH2KVFVF" onclick="selectQty(this)">
                         <span class="qty-num">9</span><span class="qty-price">£135</span>
                     </div>
-                    <div class="qty-option" data-qty="10" data-link="YOUR_SUMUP_LINK_FOR_10" onclick="selectQty(this)">
+                    <div class="qty-option" data-qty="10" data-link="https://pay.sumup.com/b2c/Q4IGNI60" onclick="selectQty(this)">
                         <span class="qty-num">10</span><span class="qty-price">£150</span>
                     </div>
                 </div>
@@ -768,13 +767,6 @@
 
             const selectedOption = document.querySelector('.qty-option.selected');
             const sumupLink = selectedOption.dataset.link;
-
-            if (sumupLink.includes("YOUR_SUMUP_LINK")) {
-                alert("Please update the SumUp payment links in the HTML code before testing!");
-                btn.disabled = false;
-                btn.innerHTML = originalText;
-                return false;
-            }
 
             try {
                 const form = document.getElementById('ticketPurchaseForm');
