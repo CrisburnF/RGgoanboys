@@ -100,7 +100,6 @@
             font-weight: 900;
             line-height: 1.05;
             text-transform: uppercase;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
 
         .info-pill {
@@ -124,7 +123,7 @@
             background: rgba(0,0,0,0.25);
             border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 20px;
-            padding: 35px;
+            padding: 25px;
             height: 100%;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -306,6 +305,12 @@
             0%,100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.5); transform: scale(1); }
             50% { box-shadow: 0 0 0 22px rgba(255,215,0,0); transform: scale(1.04); }
         }
+
+        /* Responsive Master Layout Overrides */
+        .sticky-poster {
+            position: sticky;
+            top: 110px;
+        }
     </style>
 </head>
 <body>
@@ -316,7 +321,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
+        <div class="container-fluid px-4 px-xl-5">
             <a class="navbar-brand" href="../index.html?home=1">
                 <img src="../images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
                 <div>GOAN<span class="text-white">READING BOYS</span></div>
@@ -327,7 +332,7 @@
 
     <!-- HERO -->
     <header class="event-hero">
-        <div class="container" data-aos="fade-up">
+        <div class="container-fluid px-4 px-xl-5" data-aos="fade-up">
             <a href="../index.html?home=1" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
             <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
                 <img src="../images/Saomiguel_circle.jpg" alt="Feast of Sao Miguel" style="width:200px; height:200px; object-fit:cover; border-radius:50%; border: 3px solid var(--accent-gold); box-shadow:0 10px 40px rgba(0,0,0,0.8); flex-shrink:0;">
@@ -350,126 +355,118 @@
         </div>
     </header>
 
-    <!-- DATE & OFFICIAL POSTER -->
-    <section class="py-5">
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="fw-bold mb-4" style="color: var(--goan-gold); letter-spacing: 2px; text-transform: uppercase;">Saturday, 10 October 2026</h2>
-            <img src="../images/SaoMiguel.jpeg" alt="Official Feast of Sao Miguel Poster" class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; border: 2px solid var(--accent-gold); max-height: 85vh; object-fit: contain;">
-        </div>
-    </section>
-
-    <!-- PROGRAM / WHAT TO EXPECT -->
-    <section class="py-5">
-        <div class="container">
-            <div class="mb-4" data-aos="fade-right">
-                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Faith & Fellowship</h6>
-                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Feast Day Program</h2>
-                <p style="color:rgba(255,255,255,0.7); margin-top:12px; max-width: 700px;">Join the Goan Reading Boys community as we come together in prayer and celebration to honor St. Michael.</p>
-            </div>
-            <div class="row g-4 justify-content-center mb-5">
+    <!-- MASTER 3-COLUMN LAYOUT -->
+    <section class="py-5 overflow-hidden">
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="row g-4 g-xl-5 justify-content-center">
                 
-                <!-- MASS -->
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="detail-card text-center">
-                        <i class="fas fa-church icon-lg"></i>
-                        <h4>Holy Mass & Procession</h4>
-                        <div class="mb-3">
-                            <span class="feature-badge" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); color: #fff;"><i class="fas fa-clock me-1"></i> 12:00 PM</span>
-                            <span class="feature-badge" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); color: #fff;"><i class="fas fa-map-marker-alt me-1"></i> St. James Church</span>
-                        </div>
-                        <p class="opacity-75 fw-light small mt-auto" style="color:#fff;">Celebration of the Holy Mass at St. James Church on Forbury Road, followed by the traditional procession bearing the statue of Sao Miguel.</p>
+                <!-- LEFT COLUMN: PROGRAM -->
+                <div class="col-lg-4 col-xl-4 order-2 order-lg-1" data-aos="fade-right">
+                    <div class="mb-4 text-center text-lg-start">
+                        <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Faith & Fellowship</h6>
+                        <h2 class="fw-900 text-uppercase" style="border-left: 5px solid var(--goan-gold); padding-left: 15px; font-size: 2rem; display: inline-block;">Feast Day Program</h2>
                     </div>
-                </div>
-
-                <!-- LIVE BAND & MC -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="detail-card highlight-card text-center">
-                        <i class="fas fa-music icon-lg" style="color: #fff;"></i>
-                        <h4 style="color: #fff;">Hall Party & Live Music</h4>
-                        <div class="mb-3">
-                            <span class="feature-badge" style="background: var(--goan-gold); color: #000;">🎤 Live Band V5</span>
-                            <span class="feature-badge" style="background: var(--goan-gold); color: #000;">🔥 Emcee Marina</span>
-                        </div>
-                        <p class="opacity-90 fw-light small mt-auto" style="color:#fff;">Doors open at <strong>6:00 PM</strong> at the hall! Get ready to dance the night away with incredible live music and our vibrant host leading the celebration.</p>
-                    </div>
-                </div>
-
-                <!-- FOOD & SNACK COUPON -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="detail-card text-center">
-                        <i class="fas fa-utensils icon-lg"></i>
-                        <h4>Feast & Snacks</h4>
-                        <div class="mb-3">
-                            <span class="feature-badge" style="border-color: #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1);">🎟️ Included in £15</span>
-                            <span class="feature-badge" style="border-color: var(--goan-gold); color: var(--goan-gold); background: rgba(255, 215, 0, 0.1);">👶 10 & Under FREE</span>
-                        </div>
-                        <p class="opacity-75 fw-light small mt-auto" style="color:#fff;">Your ticket includes a complimentary <strong>Meal and Snack Plate</strong>. Enjoy authentic Goan cuisine and refreshments served during the hall celebration.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- LOCATION & TICKETS -->
-    <section class="py-5">
-        <div class="container">
-            <div class="mb-5" data-aos="fade-right">
-                <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here & Contacts</h6>
-                <h2 class="fw-900 text-uppercase" style="font-weight:900; border-left: 5px solid var(--goan-gold); padding-left: 20px; font-size: 2.5rem;">Venue & Tickets</h2>
-            </div>
-            <div class="row g-4 mb-4">
-                
-                <!-- VENUE CARD -->
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="detail-card text-center">
-                        <i class="fas fa-map-marker-alt icon-lg"></i>
-                        <h4>Locations & Times</h4>
-                        
-                        <div class="d-flex flex-column gap-3 text-start mb-2 mt-3">
-                            <!-- Mass Location -->
-                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h6 class="fw-bold mb-0" style="color:var(--goan-gold);">Holy Mass</h6>
-                                    <span class="badge bg-light text-dark">12:00 PM</span>
-                                </div>
-                                <p class="opacity-75 fw-light mb-2 small" style="color:#fff;">St. James Church<br>Forbury Rd, Reading RG1 3FD</p>
-                                <a href="https://maps.google.com/?q=St+James+Church,+Forbury+Rd,+Reading+RG1+3FD" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem;"><i class="fas fa-external-link-alt me-1"></i> Google Maps</a>
+                    
+                    <div class="d-flex flex-column gap-4">
+                        <!-- MASS -->
+                        <div class="detail-card text-center">
+                            <i class="fas fa-church icon-lg"></i>
+                            <h4>Holy Mass & Procession</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); color: #fff;"><i class="fas fa-clock me-1"></i> 12:00 PM</span>
+                                <span class="feature-badge" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); color: #fff;"><i class="fas fa-map-marker-alt me-1"></i> St. James Church</span>
                             </div>
+                            <p class="opacity-75 fw-light small mt-auto mb-0" style="color:#fff;">Celebration of the Holy Mass at St. James Church on Forbury Road, followed by the traditional procession bearing the statue of Sao Miguel.</p>
+                        </div>
 
-                            <!-- Party Location -->
-                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h6 class="fw-bold mb-0" style="color:var(--goan-gold);">Feast Celebration</h6>
-                                    <span class="badge bg-light text-dark">6:00 PM Onwards</span>
+                        <!-- LIVE BAND & MC -->
+                        <div class="detail-card highlight-card text-center">
+                            <i class="fas fa-music icon-lg" style="color: #fff;"></i>
+                            <h4 style="color: #fff;">Hall Party & Live Music</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge" style="background: var(--goan-gold); color: #000;">🎤 Live Band V5</span>
+                                <span class="feature-badge" style="background: var(--goan-gold); color: #000;">🔥 Emcee Marina</span>
+                            </div>
+                            <p class="opacity-90 fw-light small mt-auto mb-0" style="color:#fff;">Doors open at <strong>6:00 PM</strong> at the hall! Get ready to dance the night away with incredible live music and our vibrant host leading the celebration.</p>
+                        </div>
+
+                        <!-- FOOD & SNACK COUPON -->
+                        <div class="detail-card text-center">
+                            <i class="fas fa-utensils icon-lg"></i>
+                            <h4>Feast & Snacks</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge" style="border-color: #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1);">🎟️ Included in £15</span>
+                                <span class="feature-badge" style="border-color: var(--goan-gold); color: var(--goan-gold); background: rgba(255, 215, 0, 0.1);">👶 10 & Under FREE</span>
+                            </div>
+                            <p class="opacity-75 fw-light small mt-auto mb-0" style="color:#fff;">Your ticket includes a complimentary <strong>Meal and Snack Plate</strong>. Enjoy authentic Goan cuisine and refreshments served during the hall celebration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER COLUMN: POSTER -->
+                <div class="col-lg-4 col-xl-4 order-1 order-lg-2 text-center" data-aos="zoom-in">
+                    <div class="sticky-poster">
+                        <h2 class="fw-bold mb-4" style="color: var(--goan-gold); letter-spacing: 2px; text-transform: uppercase;">Saturday, 10 October 2026</h2>
+                        <img src="../images/SaoMiguel.jpeg" alt="Official Feast of Sao Miguel Poster" class="img-fluid rounded-4 shadow-lg" style="width: 100%; border: 2px solid var(--accent-gold); max-height: 80vh; object-fit: contain;">
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: VENUE & TICKETS -->
+                <div class="col-lg-4 col-xl-4 order-3 order-lg-3" data-aos="fade-left">
+                    <div class="mb-4 text-center text-lg-start">
+                        <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here & Contacts</h6>
+                        <h2 class="fw-900 text-uppercase" style="border-left: 5px solid var(--goan-gold); padding-left: 15px; font-size: 2rem; display: inline-block;">Venue & Tickets</h2>
+                    </div>
+                    
+                    <div class="d-flex flex-column gap-4">
+                        <!-- VENUE CARD -->
+                        <div class="detail-card text-center">
+                            <i class="fas fa-map-marker-alt icon-lg"></i>
+                            <h4>Locations & Times</h4>
+                            
+                            <div class="d-flex flex-column gap-3 text-start mb-2 mt-3">
+                                <!-- Mass Location -->
+                                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="fw-bold mb-0" style="color:var(--goan-gold);">Holy Mass</h6>
+                                        <span class="badge bg-light text-dark">12:00 PM</span>
+                                    </div>
+                                    <p class="opacity-75 fw-light mb-2 small" style="color:#fff;">St. James Church<br>Forbury Rd, Reading RG1 3FD</p>
+                                    <a href="https://maps.google.com/?q=St+James+Church,+Forbury+Rd,+Reading+RG1+3FD" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem;"><i class="fas fa-external-link-alt me-1"></i> Google Maps</a>
                                 </div>
-                                <p class="opacity-75 fw-light mb-2 small" style="color:#fff;">252 Reading Youth & Community Centre<br>Northumberland Ave, Reading RG2 7QA</p>
-                                <a href="https://maps.google.com/?q=252+Reading+Youth+and+Community+Centre,+Northumberland+Ave,+Reading" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem;"><i class="fas fa-external-link-alt me-1"></i> Google Maps</a>
+
+                                <!-- Party Location -->
+                                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="fw-bold mb-0" style="color:var(--goan-gold);">Feast Celebration</h6>
+                                        <span class="badge bg-light text-dark">6:00 PM Onwards</span>
+                                    </div>
+                                    <p class="opacity-75 fw-light mb-2 small" style="color:#fff;">252 Reading Youth & Community Centre<br>Northumberland Ave, Reading RG2 7QA</p>
+                                    <a href="https://maps.google.com/?q=252+Reading+Youth+and+Community+Centre,+Northumberland+Ave,+Reading" target="_blank" rel="noopener" style="color:var(--goan-gold); text-decoration:none; font-size:0.85rem;"><i class="fas fa-external-link-alt me-1"></i> Google Maps</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- CONTACT CARD -->
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="detail-card highlight-card text-center">
-                        <i class="fas fa-phone-alt icon-lg" style="color: #fff;"></i>
-                        <h4 style="color: #fff;">Physical Tickets Contacts</h4>
-                        <p class="opacity-75 fw-light mb-4 small" style="color:#fff;">Tap a number below to call directly for physical ticket queries or reserved seating.</p>
                         
-                        <div class="mt-auto">
-                            <a href="tel:+447851158142" class="contact-chip">
-                                <strong>RANDELL</strong>
-                                <span>07851 158142</span>
-                            </a>
-                            <a href="tel:+447823407481" class="contact-chip">
-                                <strong>AGNELO</strong>
-                                <span>07823 407481</span>
-                            </a>
-                            <a href="tel:+447412453595" class="contact-chip">
-                                <strong>ASTLE</strong>
-                                <span>07412 453595</span>
-                            </a>
+                        <!-- CONTACT CARD -->
+                        <div class="detail-card highlight-card text-center">
+                            <i class="fas fa-phone-alt icon-lg" style="color: #fff;"></i>
+                            <h4 style="color: #fff;">Physical Tickets Contacts</h4>
+                            <p class="opacity-75 fw-light mb-4 small" style="color:#fff;">Tap a number below to call directly for physical ticket queries or reserved seating.</p>
+                            
+                            <div class="mt-auto">
+                                <a href="tel:+447851158142" class="contact-chip">
+                                    <strong>RANDELL</strong>
+                                    <span>07851 158142</span>
+                                </a>
+                                <a href="tel:+447823407481" class="contact-chip">
+                                    <strong>AGNELO</strong>
+                                    <span>07823 407481</span>
+                                </a>
+                                <a href="tel:+447412453595" class="contact-chip">
+                                    <strong>ASTLE</strong>
+                                    <span>07412 453595</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
