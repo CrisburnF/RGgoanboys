@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- REDIRECT TO SAO MIGUEL -->
-    <meta http-equiv="refresh" content="0; url=sao-miguel/">
-    <script>window.location.replace("sao-miguel/");</script>
+    <!-- CONDITIONAL REDIRECT TO SAO MIGUEL -->
+    <script>
+        // Only redirect if the user didn't explicitly click "Back to all events"
+        if (!window.location.search.includes('home=1')) {
+            window.location.replace("sao-miguel/");
+        }
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DKE5NXZ19"></script>
