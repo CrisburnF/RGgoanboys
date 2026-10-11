@@ -41,6 +41,14 @@
             overflow-x: hidden;
         }
 
+        /* --- GLOBAL GLOW FOR HEADINGS --- */
+        .event-title,
+        h2.fw-900,
+        .detail-card h4,
+        .detail-card .icon-lg {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
+        }
+
         .navbar {
             background: rgba(31, 0, 0, 0.95) !important;
             backdrop-filter: blur(15px);
@@ -326,7 +334,6 @@
                 <img src="../images/rgb-logo.png" alt="RGB Logo" class="nav-logo">
                 <div>GOAN<span class="text-white">READING BOYS</span></div>
             </a>
-            <button onclick="openTicketPurchase()" class="btn btn-gold ms-auto" style="padding: 10px 25px; font-size: 0.8rem; border:none;"><i class="fas fa-ticket-alt me-1"></i> Buy Tickets</button>
         </div>
     </nav>
 
@@ -336,21 +343,16 @@
             <a href="../index.html?home=1" class="back-link"><i class="fas fa-arrow-left"></i> Back to all events</a>
             <div class="d-flex align-items-center gap-4 mb-3 flex-wrap">
                 <img src="../images/Saomiguel_circle.jpg" alt="Feast of Sao Miguel" style="width:200px; height:200px; object-fit:cover; border-radius:50%; border: 3px solid var(--accent-gold); box-shadow:0 10px 40px rgba(0,0,0,0.8); flex-shrink:0;">
-                <span class="event-badge">🎟️ Tickets on Sale Now</span>
+                <span class="event-badge">✅ Event Complete — Thank You!</span>
             </div>
             <h1 class="event-title mb-3">Feast of <br><span style="color:var(--goan-gold)">Sao Miguel</span></h1>
             <p style="font-size:clamp(1rem,2.5vw,1.2rem); font-weight:800; color:var(--goan-gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">⭐ Honouring St. Michael the Archangel</p>
-            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">A reverent celebration of our patron saint, featuring the Holy Mass, a traditional procession, and an evening of music and community feast.</p>
+            <p class="fs-5 opacity-75 fw-light mb-4" style="max-width: 600px;">Thank you to everyone who joined us for a reverent celebration of our patron saint, featuring the Holy Mass, a traditional procession, and a wonderful evening of live music and community feast.</p>
             <div class="d-flex flex-wrap">
                 <span class="info-pill"><i class="fas fa-calendar-alt"></i> Saturday, 10 October 2026</span>
                 <span class="info-pill"><i class="fas fa-church"></i> Mass: 12:00 PM</span>
                 <span class="info-pill"><i class="fas fa-glass-cheers"></i> Party: 6:00 PM</span>
                 <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Reading, Berkshire</span>
-            </div>
-            <div class="mt-4">
-                <button onclick="openTicketPurchase()" class="btn-gold" style="padding:14px 32px; font-size:1rem; box-shadow:0 8px 24px rgba(255,215,0,0.4);">
-                    <i class="fas fa-ticket-alt me-2"></i> Book Feast Tickets
-                </button>
             </div>
         </div>
     </header>
@@ -415,7 +417,7 @@
                 <div class="col-lg-4 col-xl-4 order-3 order-lg-3" data-aos="fade-left">
                     <div class="mb-4 text-center text-lg-start">
                         <h6 class="text-warning text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">Getting Here & Contacts</h6>
-                        <h2 class="fw-900 text-uppercase" style="border-left: 5px solid var(--goan-gold); padding-left: 15px; font-size: 2rem; display: inline-block;">Venue & Tickets</h2>
+                        <h2 class="fw-900 text-uppercase" style="border-left: 5px solid var(--goan-gold); padding-left: 15px; font-size: 2rem; display: inline-block;">Venue & Contacts</h2>
                     </div>
                     
                     <div class="d-flex flex-column gap-4">
@@ -450,22 +452,19 @@
                         <!-- CONTACT CARD -->
                         <div class="detail-card highlight-card text-center">
                             <i class="fas fa-phone-alt icon-lg" style="color: #fff;"></i>
-                            <h4 style="color: #fff;">Physical Tickets Contacts</h4>
-                            <p class="opacity-75 fw-light mb-4 small" style="color:#fff;">Tap a number below to call directly for physical ticket queries or reserved seating.</p>
+                            <h4 style="color: #fff;">Box Office Team</h4>
+                            <p class="opacity-75 fw-light mb-4 small" style="color:#fff;">Thank you to our dedicated team for managing event coordination.</p>
                             
                             <div class="mt-auto">
-                                <a href="tel:+447851158142" class="contact-chip">
+                                <div class="contact-chip" style="cursor: default;">
                                     <strong>RANDELL</strong>
-                                    <span>07851 158142</span>
-                                </a>
-                                <a href="tel:+447823407481" class="contact-chip">
+                                </div>
+                                <div class="contact-chip" style="cursor: default;">
                                     <strong>AGNELO</strong>
-                                    <span>07823 407481</span>
-                                </a>
-                                <a href="tel:+447412453595" class="contact-chip">
+                                </div>
+                                <div class="contact-chip" style="cursor: default;">
                                     <strong>ASTLE</strong>
-                                    <span>07412 453595</span>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -510,14 +509,6 @@
                 const l = document.getElementById('loader');
                 if (l) l.classList.add('hidden');
             }, 700);
-
-            // 10 Second Auto Pop-up for Tickets
-            if(!sessionStorage.getItem('ticketPopupShown')) {
-                setTimeout(() => {
-                    openTicketPurchase();
-                    sessionStorage.setItem('ticketPopupShown', 'true');
-                }, 10000);
-            }
         });
     </script>
 
@@ -568,13 +559,6 @@
             background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; text-decoration: none;
             padding: 12px 16px; border-radius: 24px; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer;
         }
-        .wa-quick-btn {
-            display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
-            background: #fff; color: #075E54; text-decoration: none; padding: 11px 14px; border-radius: 24px;
-            font-weight: 700; font-size: 0.85rem; margin-bottom: 10px; border: 1px solid rgba(7,94,84,0.25);
-            transition: all 0.2s; font-family: 'Outfit', sans-serif; text-align: center; line-height: 1.3;
-        }
-        .wa-quick-btn:hover { background: #075E54; color: #fff; border-color: #075E54; }
         @media (max-width: 576px) {
             .wa-widget-button { bottom: 16px; right: 16px; padding: 12px 18px; font-size: 0.85rem; }
             .wa-chat-popup { bottom: 80px; right: 16px; left: 16px; width: auto; }
@@ -593,23 +577,16 @@
         </div>
         <div class="wa-chat-body">
             <div class="wa-msg-bubble">
-                👋 Hello! Let us know if you have any questions about the Feast of Sao Miguel.
+                👋 Hello! Thanks for visiting.
                 <span class="wa-msg-time">now</span>
             </div>
             <div class="wa-msg-bubble">
-                We're happy to help with ticket inquiries, gathering details, or anything else you need.
-                <span class="wa-msg-time">now</span>
-            </div>
-            <div class="wa-msg-bubble" style="background:#FFF9DB; border:1px solid rgba(255,193,7,0.4);">
-                🎟️ <strong>Bought a ticket but not received your confirmation yet?</strong> Please check your spam/junk folder first — if it's genuinely not there, tap below and we'll sort it straight away.
+                The 2026 season has been incredible. Stay tuned for our 2027 announcements! Click below if you need to reach us.
                 <span class="wa-msg-time">now</span>
             </div>
         </div>
         <div class="wa-chat-footer">
-            <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%20have%20paid%20for%20my%20Feast%20of%20Sao%20Miguel%20ticket%28s%29%20but%20have%20not%20received%20my%20confirmation%20yet.%20I%27ve%20checked%20my%20spam%20folder%20and%20it%27s%20not%20there.%20My%20name%20is%3A%20" target="_blank" rel="noopener" class="wa-quick-btn">
-                🎟️ I haven't received my ticket confirmation
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%20have%20a%20question%20about%20the%20Feast%20of%20Sao%20Miguel." target="_blank" rel="noopener" class="wa-start-chat-btn">
+            <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%20have%20a%20question." target="_blank" rel="noopener" class="wa-start-chat-btn">
                 <i class="fab fa-whatsapp"></i> Start Chat on WhatsApp
             </a>
         </div>
@@ -618,26 +595,6 @@
     <!-- Floating WhatsApp Button -->
     <button class="wa-widget-button" onclick="toggleWaChat()">
         <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
-    </button>
-
-    <!-- Floating Buy Tickets Button -->
-    <style>
-        .buy-tickets-float {
-            position: fixed; bottom: 25px; left: 25px; background: linear-gradient(135deg, #FFD700, #FDB931);
-            color: #000; border: none; border-radius: 50px; padding: 14px 22px; display: flex; align-items: center;
-            gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.95rem; cursor: pointer;
-            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45); z-index: 9998; transition: all 0.3s ease;
-            animation: bt-pulse 2.5s ease-in-out infinite;
-        }
-        .buy-tickets-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6); }
-        @keyframes bt-pulse {
-            0%, 100% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45), 0 0 0 0 rgba(255, 215, 0, 0.5); }
-            50% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.45), 0 0 0 14px rgba(255, 215, 0, 0); }
-        }
-        @media (max-width: 576px) { .buy-tickets-float { bottom: 16px; left: 16px; padding: 12px 18px; font-size: 0.85rem; } }
-    </style>
-    <button class="buy-tickets-float" onclick="openTicketPurchase()">
-        <i class="fas fa-ticket-alt"></i> Buy Tickets
     </button>
 
     <script>
@@ -652,164 +609,5 @@
         });
     </script>
 
-    <!-- TICKET PURCHASE MODAL -->
-    <style>
-        .ticket-modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
-            z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px;
-            opacity: 0; transition: opacity 0.3s ease; overflow-y: auto;
-        }
-        .ticket-modal-overlay.active { display: flex; opacity: 1; }
-        .ticket-modal {
-            background: linear-gradient(135deg, #3d0000 0%, #1f0000 100%); border: 1px solid rgba(212,175,55,0.4);
-            border-radius: 24px; max-width: 480px; width: 100%; padding: 36px 28px; position: relative;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(212,175,55,0.15); transform: scale(0.95) translateY(20px);
-            transition: transform 0.4s ease; margin: auto;
-        }
-        .ticket-modal-overlay.active .ticket-modal { transform: scale(1) translateY(0); }
-        .ticket-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.1); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
-        .ticket-modal-close:hover { background: rgba(255,255,255,0.2); }
-        .ticket-modal-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #FFD700, #FDB931); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.7rem; color: #000; box-shadow: 0 8px 24px rgba(255,215,0,0.4); text-shadow: none !important; }
-        .ticket-modal h3 { text-align: center; font-weight: 900; color: #fff; margin-bottom: 6px; font-size: 1.4rem; text-shadow: none !important; }
-        .ticket-modal .subtitle { text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 22px; font-size: 0.9rem; }
-        .ticket-modal .form-label { color: rgba(255,255,255,0.85); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; display: block; }
-        .ticket-modal .form-control { background: rgba(0,0,0,0.2); border: 1px solid rgba(212,175,55,0.3); color: #fff; padding: 12px 16px; border-radius: 12px; margin-bottom: 14px; width: 100%; font-family: 'Outfit', sans-serif; }
-        .ticket-modal .form-control:focus { outline: none; border-color: var(--goan-gold); box-shadow: 0 0 0 3px rgba(255,215,0,0.15); }
-        .ticket-modal .form-control::placeholder { color: rgba(255,255,255,0.35); }
-        .ticket-modal .submit-btn { width: 100%; background: linear-gradient(135deg, #FFD700, #FDB931); color: #000; border: none; padding: 14px; border-radius: 12px; font-weight: 800; cursor: pointer; margin-top: 6px; box-shadow: 0 4px 15px rgba(255,215,0,0.3); transition: transform 0.2s; }
-        .ticket-modal .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,0.5); }
-        .ticket-modal .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-        .qty-selector { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 14px; }
-        .qty-option { background: rgba(0,0,0,0.2); border: 1px solid rgba(212,175,55,0.2); color: #fff; padding: 14px 8px; border-radius: 12px; cursor: pointer; text-align: center; transition: all 0.2s; }
-        .qty-option:hover { border-color: rgba(255,215,0,0.4); background: rgba(255,215,0,0.05); }
-        .qty-option.selected { background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(253,185,49,0.2)); border-color: var(--goan-gold); box-shadow: 0 4px 12px rgba(255,215,0,0.2); }
-        .qty-option .qty-num { display: block; font-weight: 800; font-size: 1.3rem; color: var(--goan-gold); line-height: 1; }
-        .qty-option .qty-price { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
-        .total-box { background: rgba(255,215,0,0.1); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-        .total-box .label { color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.9rem; }
-        .total-box .amount { color: var(--goan-gold); font-weight: 800; font-size: 1.3rem; }
-        .privacy-note { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-align: center; margin-top: 14px; margin-bottom: 0; line-height: 1.5; }
-        .more-tickets-link { display: block; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 12px; text-decoration: none; }
-        .more-tickets-link:hover { color: var(--goan-gold); }
-        .more-tickets-link i { color: #25D366; }
-    </style>
-
-    <div class="ticket-modal-overlay" id="ticketPurchase" onclick="if(event.target===this)closeTicketPurchase()">
-        <div class="ticket-modal">
-            <button class="ticket-modal-close" onclick="closeTicketPurchase()">×</button>
-            <div class="ticket-modal-icon"><i class="fas fa-ticket-alt"></i></div>
-            <h3>Get Your Tickets</h3>
-            <p class="subtitle">Feast of Sao Miguel 2026 — £15 per ticket <br><small>(Meal & Snack plate included • 10 & Under go FREE)</small></p>
-
-            <form id="ticketPurchaseForm" onsubmit="return handlePurchase(event)">
-                <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; height:0; width:0; opacity:0;">
-                <label class="form-label">How many tickets?</label>
-                <div class="qty-selector">
-                    <div class="qty-option selected" data-qty="1" data-link="https://pay.sumup.com/b2c/QXDBBM7A" onclick="selectQty(this)">
-                        <span class="qty-num">1</span><span class="qty-price">£15</span>
-                    </div>
-                    <div class="qty-option" data-qty="2" data-link="https://pay.sumup.com/b2c/QE4L6XZB" onclick="selectQty(this)">
-                        <span class="qty-num">2</span><span class="qty-price">£30</span>
-                    </div>
-                    <div class="qty-option" data-qty="3" data-link="https://pay.sumup.com/b2c/Q8UD7SET" onclick="selectQty(this)">
-                        <span class="qty-num">3</span><span class="qty-price">£45</span>
-                    </div>
-                    <div class="qty-option" data-qty="4" data-link="https://pay.sumup.com/b2c/QNT6JIMP" onclick="selectQty(this)">
-                        <span class="qty-num">4</span><span class="qty-price">£60</span>
-                    </div>
-                    <div class="qty-option" data-qty="5" data-link="https://pay.sumup.com/b2c/QUQJOK7I" onclick="selectQty(this)">
-                        <span class="qty-num">5</span><span class="qty-price">£75</span>
-                    </div>
-                    <div class="qty-option" data-qty="6" data-link="https://pay.sumup.com/b2c/QJZFC5SY" onclick="selectQty(this)">
-                        <span class="qty-num">6</span><span class="qty-price">£90</span>
-                    </div>
-                    <div class="qty-option" data-qty="7" data-link="https://pay.sumup.com/b2c/QMIFW9ZG" onclick="selectQty(this)">
-                        <span class="qty-num">7</span><span class="qty-price">£105</span>
-                    </div>
-                    <div class="qty-option" data-qty="8" data-link="https://pay.sumup.com/b2c/QOAAM37B" onclick="selectQty(this)">
-                        <span class="qty-num">8</span><span class="qty-price">£120</span>
-                    </div>
-                    <div class="qty-option" data-qty="9" data-link="https://pay.sumup.com/b2c/QH2KVFVF" onclick="selectQty(this)">
-                        <span class="qty-num">9</span><span class="qty-price">£135</span>
-                    </div>
-                    <div class="qty-option" data-qty="10" data-link="https://pay.sumup.com/b2c/Q4IGNI60" onclick="selectQty(this)">
-                        <span class="qty-num">10</span><span class="qty-price">£150</span>
-                    </div>
-                </div>
-
-                <label class="form-label" for="tpName">Full Name</label>
-                <input type="text" id="tpName" name="name" class="form-control" placeholder="As it appears on your card" required>
-
-                <label class="form-label" for="tpEmail">Email Address</label>
-                <input type="email" id="tpEmail" name="email" class="form-control" placeholder="Where we'll send your confirmation" required>
-
-                <label class="form-label" for="tpPhone">Phone Number</label>
-                <input type="tel" id="tpPhone" name="phone" class="form-control" placeholder="In case we need to reach you" required>
-
-                <label class="form-label" for="tpReferral">Referred by anyone? <span style="opacity:0.5; font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
-                <input type="text" id="tpReferral" name="referred_by" class="form-control" placeholder="Name of who referred you, if any">
-
-                <div class="total-box">
-                    <span class="label">Order Total</span>
-                    <span class="amount" id="orderTotal">£15.00</span>
-                </div>
-
-                <input type="hidden" name="quantity" id="tpQuantity" value="1">
-                <input type="hidden" name="total" id="tpTotal" value="£15.00">
-                <input type="hidden" name="_subject" value="🎟️ Sao Miguel Ticket Purchase">
-                <input type="hidden" name="form_type" value="Sao Miguel Ticket Purchase">
-
-                <button type="submit" class="submit-btn" id="tpSubmitBtn">
-                    <i class="fas fa-lock me-2"></i> Continue to Secure Payment
-                </button>
-
-                <a href="https://api.whatsapp.com/send?phone=447426806928&text=Hi%20Goan%20Reading%20Boys%21%20%F0%9F%91%8B%20I%27d%20like%20to%20purchase%20more%20than%2010%20tickets%20for%20the%20Feast%20of%20Sao%20Miguel." target="_blank" rel="noopener" class="more-tickets-link">
-                    <i class="fab fa-whatsapp me-1"></i> Need more than 10 tickets? Contact us on WhatsApp
-                </a>
-
-                <p class="privacy-note">🔒 Your details are submitted securely. You'll then be redirected to SumUp to complete payment. Your ticket confirmation will be emailed to you within 24 hours of payment.</p>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function openTicketPurchase() { document.getElementById('ticketPurchase').classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeTicketPurchase() { document.getElementById('ticketPurchase').classList.remove('active'); document.body.style.overflow = ''; }
-        function selectQty(el) {
-            document.querySelectorAll('.qty-option').forEach(o => o.classList.remove('selected'));
-            el.classList.add('selected');
-            const qty = el.dataset.qty;
-            const total = (parseInt(qty) * 15).toFixed(2);
-            document.getElementById('orderTotal').textContent = '£' + total;
-            document.getElementById('tpQuantity').value = qty;
-            document.getElementById('tpTotal').value = '£' + total;
-        }
-
-        const GRB_FORMS_URL = 'https://script.google.com/macros/s/AKfycbw-E32MT_nWU7AoPRJvcZEjfDfmrgZHD9NMVp5Idn9Qc0uZaEWshFoqUGCPPtEg2-JXOQ/exec';
-
-        async function handlePurchase(e) {
-            e.preventDefault();
-            const btn = document.getElementById('tpSubmitBtn');
-            const originalText = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Processing...';
-
-            const selectedOption = document.querySelector('.qty-option.selected');
-            const sumupLink = selectedOption.dataset.link;
-
-            try {
-                const form = document.getElementById('ticketPurchaseForm');
-                const params = new URLSearchParams(new FormData(form));
-                await fetch(GRB_FORMS_URL, { method: 'POST', mode: 'no-cors', body: params });
-                btn.innerHTML = '<i class="fas fa-check me-2"></i> Redirecting to payment...';
-                window.location.href = sumupLink;
-            } catch (err) {
-                btn.disabled = false;
-                btn.innerHTML = originalText;
-                alert('Could not connect. Please check your internet and try again.');
-            }
-            return false;
-        }
-    </script>
 </body>
 </html>
